@@ -15,6 +15,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiw3p"]
+bg_color = Color(0, 0, 0, 0.34901962)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="GDScript" id="GDScript_kiw3p"]
 script/source = "extends Control
 
@@ -280,6 +287,7 @@ offset_right = 850.0
 offset_bottom = 592.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = ExtResource("5_kiw3p")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="DraftMode/AvailablePlayers" unique_id=989649931]
 custom_minimum_size = Vector2(30, 40)
@@ -288,6 +296,7 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
 
 [node name="NameLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=495714303]
 layout_mode = 1
@@ -395,6 +404,7 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 scroll_hint_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DraftMode/AvailablePlayers/ScrollContainer" unique_id=699744032]
 custom_minimum_size = Vector2(600, 500)
@@ -412,6 +422,7 @@ offset_right = 1110.0
 offset_bottom = 235.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="DraftMode/SelectedPlayer" unique_id=427511358]
 custom_minimum_size = Vector2(30, 40)
@@ -462,57 +473,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="SimulateRound" type="Panel" parent="DraftMode" unique_id=774054524]
-layout_mode = 0
-offset_left = 857.0
-offset_top = 240.0
-offset_right = 1110.0
-offset_bottom = 335.0
-theme = ExtResource("1_s0nni")
-theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
-
-[node name="Panel" type="Panel" parent="DraftMode/SimulateRound" unique_id=255274916]
-custom_minimum_size = Vector2(30, 40)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_styles/panel = ExtResource("6_400sg")
-metadata/_edit_lock_ = true
-
-[node name="NameLabel" type="Label" parent="DraftMode/SimulateRound/Panel" unique_id=1961121809]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 41.0
-grow_horizontal = 2
-text = "Simulate Round"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="ConfirmPickButton" type="Button" parent="DraftMode/SimulateRound" unique_id=464640658]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -47.0
-offset_right = -5.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Confirm"
-metadata/_edit_lock_ = true
-
 [node name="SaveGameWindow" type="Panel" parent="DraftMode" unique_id=1148457244]
 layout_mode = 0
-offset_left = 857.0
-offset_top = 341.0
-offset_right = 1110.0
-offset_bottom = 436.0
+offset_left = 858.0
+offset_top = 242.0
+offset_right = 1111.0
+offset_bottom = 337.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
 
@@ -557,18 +523,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1139.0
-offset_top = 56.0
-offset_right = 1844.0
-offset_bottom = 1001.0
+offset_left = 1120.0
+offset_top = 93.0
+offset_right = 1592.0
+offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kiw3p")
+metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DraftMode/DraftPicksWindow" unique_id=1752464217]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 11.0
+offset_right = -18.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true

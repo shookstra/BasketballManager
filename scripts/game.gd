@@ -9,13 +9,14 @@ const team_card = preload("res://scenes/TeamCard.tscn")
 @onready var gm_line_edit = $NewLeagueMode/VBoxContainer/GMLineEdit
 @onready var team_generator: TeamGenerator
 @onready var draft_manager: DraftManager
+@onready var draft_picks_window := $DraftMode/DraftPicksWindow/ScrollContainer/VBoxContainer
 
 var save := SaveGameAsResource.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Data._create_or_load_save()
-	
+	set_draft_picks()
 	team_generator = TeamGenerator.new()
 	draft_manager = DraftManager.new()
 		
@@ -23,7 +24,7 @@ func _ready() -> void:
 		while (Data._save.league.teams.size() < Data._save.number_of_teams):
 			var new_team = team_generator.generate_roster()
 			Data._save.league.teams.append(new_team)
-		$Dashboard/SidebarColorRect2/TeamNameLabel.text = Data._save.player_team.city + " " + Data._save.player_team.name
+	$Dashboard/SidebarColorRect2/TeamNameLabel.text = Data._save.player_team.city + " " + Data._save.player_team.name
 	
 	if (!Data._save.players):
 		Data._save.players = team_generator.generate_players(100)
@@ -88,20 +89,51 @@ func set_list_of_teams():
 		$NewLeagueMode/TeamList/ScrollContainer/VBoxContainer.add_child(new_team_card)
 
 func _on_confirm_pick_button_pressed() -> void:
-	var selected_player = Data._save.selected_player
-	Data._save.player_team.players.append(selected_player)
-	Data._save.players.erase(selected_player)
-	
-	set_available_players_list()
-	
-	for team in Data._save.league.teams:
-		if team != Data._save.player_team:
-			var new_pick: Player = draft_manager.simulate_draft_pick()
-			team.players.append(new_pick)
-			Data._save.players.erase(new_pick)
-			print(team.name + " selected: " + new_pick.first_name + " " + new_pick.last_name)
-	Data._save_game()
+	if Data._save.draft.current_round < 14:
+		var selected_player = Data._save.selected_player
+		if selected_player:
+			var draft_pick := DraftPick.new()
+			Data._save.player_team.players.append(selected_player)
+			Data._save.players.erase(selected_player)
+			draft_pick.player = selected_player
+			draft_pick.team = Data._save.player_team
+			draft_pick.pick_number = Data._save.draft.current_pick_number
+			draft_pick.round_number = Data._save.draft.current_round
+			Data._save.draft.picks.append(draft_pick)
+			
+			Data._save.draft.current_pick_number += 1
+			
+			set_available_players_list()
+			
+			for team in Data._save.league.teams:
+				if team != Data._save.player_team:
+					var new_pick: Player = draft_manager.simulate_draft_pick()
+					var computer_draft_pick := DraftPick.new()
+					computer_draft_pick.player = new_pick
+					computer_draft_pick.team = team
+					computer_draft_pick.pick_number = Data._save.draft.current_pick_number
+					computer_draft_pick.round_number = Data._save.draft.current_round
+					Data._save.draft.picks.append(computer_draft_pick)
+					team.players.append(new_pick)
+					Data._save.players.erase(new_pick)
+					var new_label := Label.new()
+					Data._save.draft.current_pick_number += 1
+					set_draft_picks()
+					#print(team.name + " selected: " + new_pick.first_name + " " + new_pick.last_name)
+			Data._save.draft.current_round += 1
+			Data._save.draft.current_pick_number = 1
+			Data._save_game()
+			
+		Data._save.selected_player = null
 
+func set_draft_picks():
+	for item in draft_picks_window.get_children():
+		item.queue_free()
+	
+	for draft_pick in Data._save.draft.picks:
+		var new_label = Label.new()
+		new_label.text = draft_pick.team.city + " " + draft_pick.team.name + " selected: " + draft_pick.player.first_name + " " + draft_pick.player.last_name
+		draft_picks_window.add_child(new_label)
 
 func _on_save_game_button_pressed() -> void:
 	Data._save_game()
