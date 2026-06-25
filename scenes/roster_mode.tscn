@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://cxxirbu37mvgv"]
+
+[ext_resource type="Script" uid="uid://djh8c2u34v5jq" path="res://scripts/roster_mode.gd" id="1_qd0hv"]
+[ext_resource type="Theme" uid="uid://c5p4ivn6j71pr" path="res://resources/main_theme.tres" id="1_vtt4g"]
+[ext_resource type="StyleBox" uid="uid://0uc1sx384q58" path="res://styles/transparent_box_flat.tres" id="2_qd0hv"]
+[ext_resource type="StyleBox" uid="uid://cuhgu0shw0h5f" path="res://styles/blue_style_box_flat.tres" id="3_rwrff"]
+
+[node name="RosterMode" type="Control" unique_id=444458120]
+layout_mode = 3
+anchor_right = 0.651
+anchor_bottom = 0.76400006
+offset_right = -749.952
+offset_bottom = -495.07205
+script = ExtResource("1_qd0hv")
+
+[node name="PlayerList" type="Panel" parent="." unique_id=1988603646]
+layout_mode = 1
+offset_right = 750.0
+offset_bottom = 500.0
+theme = ExtResource("1_vtt4g")
+theme_override_styles/panel = ExtResource("2_qd0hv")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="PlayerList" unique_id=1873043229]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("3_rwrff")
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="PlayerList/Panel" unique_id=100454652]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -10.0
+offset_right = 113.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "Player"
+horizontal_alignment = 1
+
+[node name="StrengthLabel" type="Label" parent="PlayerList/Panel" unique_id=1348907343]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 10.0
+offset_right = 263.0
+offset_bottom = 30.0
+text = "Str"
+horizontal_alignment = 1
+
+[node name="AgilityLabel" type="Label" parent="PlayerList/Panel" unique_id=90832143]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 10.0
+offset_right = 313.0
+offset_bottom = 30.0
+text = "Agi"
+horizontal_alignment = 1
+
+[node name="EnduranceLabel" type="Label" parent="PlayerList/Panel" unique_id=486315845]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 30.0
+text = "End"
+horizontal_alignment = 1
+
+[node name="IntelligenceLabel" type="Label" parent="PlayerList/Panel" unique_id=1181503056]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 10.0
+offset_right = 453.0
+offset_bottom = 30.0
+text = "Int"
+horizontal_alignment = 1
+
+[node name="CharismaLabel" type="Label" parent="PlayerList/Panel" unique_id=1057686500]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 10.0
+offset_right = 507.0
+offset_bottom = 30.0
+text = "Cha"
+horizontal_alignment = 1
+
+[node name="MinutesPlayedLabel" type="Label" parent="PlayerList/Panel" unique_id=1785769334]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 10.0
+offset_right = 554.0
+offset_bottom = 30.0
+text = "MP"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="PlayerList/Panel" unique_id=2140807772]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 10.0
+offset_right = 618.0
+offset_bottom = 30.0
+text = "PTS"
+horizontal_alignment = 1
+
+[node name="ReboundsLabel" type="Label" parent="PlayerList/Panel" unique_id=780172270]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 10.0
+offset_right = 671.0
+offset_bottom = 30.0
+text = "TRB"
+horizontal_alignment = 1
+
+[node name="AssistsLabel" type="Label" parent="PlayerList/Panel" unique_id=1330202696]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 10.0
+offset_right = 722.0
+offset_bottom = 30.0
+text = "AST"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerList" unique_id=1950237708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 53.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerList/ScrollContainer" unique_id=1950542995]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+metadata/_edit_lock_ = true

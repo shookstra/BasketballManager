@@ -10,6 +10,7 @@ const team_card = preload("res://scenes/TeamCard.tscn")
 @onready var team_generator: TeamGenerator
 @onready var draft_manager: DraftManager
 @onready var draft_picks_window := $DraftMode/DraftPicksWindow/ScrollContainer/VBoxContainer
+@onready var roster_mode := $NewLeagueMode/RosterMode
 
 var save := SaveGameAsResource.new()
 
@@ -36,7 +37,7 @@ func set_available_players_list():
 	var container = $DraftMode/AvailablePlayers/ScrollContainer/VBoxContainer
 	for n in container.get_children():
 		container.remove_child(n)
-		n.queue_free() 
+		n.queue_free()
 		
 	for new_player in Data._save.players:
 		var new_card = player_card.instantiate()
@@ -49,6 +50,9 @@ func set_available_players_list():
 		new_card.get_node("HBoxContainer/CharismaLabel").text = str(new_player.stats.charisma)
 		$DraftMode/AvailablePlayers/ScrollContainer/VBoxContainer.add_child(new_card)
 		new_card.connect("player_selected", _on_player_selected)
+		
+func set_roster():
+	pass
 
 func _on_create_league_button_pressed() -> void:
 	var new_league = team_generator.generate_empty_league()
@@ -80,12 +84,20 @@ func _on_player_selected(new_player_card: PlayerCard):
 	Data._save.selected_player = new_player_card.player
 	$DraftMode/SelectedPlayer/SelectedPlayerLabel.text = Data._save.selected_player.first_name + " " + Data._save.selected_player.last_name
 
+func _on_team_selected(new_team_card: TeamCard):
+	roster_mode.team = new_team_card.team
+	roster_mode.clear_team()
+	roster_mode.set_team()
+	
+
 func set_list_of_teams():
 	for new_team in Data._save.league.teams:
 		var new_team_card = team_card.instantiate()
+		new_team_card.team = new_team
 		new_team_card.get_node("HBoxContainer/NameLabel").text = new_team.city + " " + new_team.name
 		new_team_card.get_node("HBoxContainer/WinsLabel").text = str(new_team.wins)
 		new_team_card.get_node("HBoxContainer/LossesLabel").text = str(new_team.losses)
+		new_team_card.connect("team_selected", _on_team_selected)
 		$NewLeagueMode/TeamList/ScrollContainer/VBoxContainer.add_child(new_team_card)
 
 func _on_confirm_pick_button_pressed() -> void:
@@ -132,7 +144,7 @@ func set_draft_picks():
 	
 	for draft_pick in Data._save.draft.picks:
 		var new_label = Label.new()
-		new_label.text = draft_pick.team.city + " " + draft_pick.team.name + " selected: " + draft_pick.player.first_name + " " + draft_pick.player.last_name
+		new_label.text = "Round " + str(draft_pick.round_number) + " Pick " + str(draft_pick.pick_number) + " - " + draft_pick.team.city + " " + draft_pick.team.name + " selected " + draft_pick.player.first_name + " " + draft_pick.player.last_name
 		draft_picks_window.add_child(new_label)
 
 func _on_save_game_button_pressed() -> void:

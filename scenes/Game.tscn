@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://0uc1sx384q58" path="res://styles/transparent_box_flat.tres" id="5_kiw3p"]
 [ext_resource type="StyleBox" uid="uid://cuhgu0shw0h5f" path="res://styles/blue_style_box_flat.tres" id="6_400sg"]
 [ext_resource type="Script" uid="uid://cq8krumrm207n" path="res://scripts/draft_manager.gd" id="6_aug50"]
+[ext_resource type="PackedScene" uid="uid://cxxirbu37mvgv" path="res://scenes/roster_mode.tscn" id="7_400sg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_400sg"]
 bg_color = Color(0.43529412, 0.40392157, 0.4627451, 0.3529412)
@@ -135,65 +136,85 @@ text = "Settings"
 [node name="ExhibitionMode" type="Node" parent="." unique_id=1376032366]
 
 [node name="NewLeagueMode" type="Control" parent="." unique_id=61726855]
-visible = false
 anchors_preset = 0
 offset_left = 107.0
 offset_top = 51.0
-offset_right = 367.0
-offset_bottom = 429.0
+offset_right = 169.0
+offset_bottom = 113.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NewLeagueMode" unique_id=1861616802]
+[node name="RosterMode" parent="NewLeagueMode" unique_id=444458120 instance=ExtResource("7_400sg")]
 layout_mode = 0
-offset_right = 192.0
-offset_bottom = 239.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 387.0
+offset_right = 387.0
+offset_bottom = 0.0
+
+[node name="CreateLeagueContainer" type="VBoxContainer" parent="NewLeagueMode" unique_id=1861616802]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 516.0
+offset_right = 633.0
+offset_bottom = 840.0
 theme_override_constants/separation = 8
 
-[node name="NewLeagueLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1749129793]
+[node name="NewLeagueLabel" type="Label" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1749129793]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Create New League"
+metadata/_edit_lock_ = true
 
-[node name="LeagueNameLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=960019508]
+[node name="LeagueNameLabel" type="Label" parent="NewLeagueMode/CreateLeagueContainer" unique_id=960019508]
 layout_mode = 2
 text = "League Name"
+metadata/_edit_lock_ = true
 
-[node name="LeagueNameLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=441728392]
+[node name="LeagueNameLineEdit" type="LineEdit" parent="NewLeagueMode/CreateLeagueContainer" unique_id=441728392]
 layout_mode = 2
 text = "PWBL"
+metadata/_edit_lock_ = true
 
-[node name="CityLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1282849014]
+[node name="CityLabel" type="Label" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1282849014]
 layout_mode = 2
 text = "City"
+metadata/_edit_lock_ = true
 
-[node name="CityLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=1794715263]
+[node name="CityLineEdit" type="LineEdit" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1794715263]
 layout_mode = 2
 text = "Lincoln"
+metadata/_edit_lock_ = true
 
-[node name="NewLeagueLabel3" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1785850074]
+[node name="NewLeagueLabel3" type="Label" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1785850074]
 layout_mode = 2
 text = "Team Name"
+metadata/_edit_lock_ = true
 
-[node name="TeamNameLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=663243790]
+[node name="TeamNameLineEdit" type="LineEdit" parent="NewLeagueMode/CreateLeagueContainer" unique_id=663243790]
 layout_mode = 2
 text = "Sowers"
+metadata/_edit_lock_ = true
 
-[node name="GMLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1012920476]
+[node name="GMLabel" type="Label" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1012920476]
 layout_mode = 2
 text = "General Manager"
+metadata/_edit_lock_ = true
 
-[node name="GMLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=793654193]
+[node name="GMLineEdit" type="LineEdit" parent="NewLeagueMode/CreateLeagueContainer" unique_id=793654193]
 layout_mode = 2
 text = "Semmy"
+metadata/_edit_lock_ = true
 
-[node name="CreateLeagueButton" type="Button" parent="NewLeagueMode/VBoxContainer" unique_id=1730994410]
+[node name="CreateLeagueButton" type="Button" parent="NewLeagueMode/CreateLeagueContainer" unique_id=1730994410]
 layout_mode = 2
 text = "Create League"
+metadata/_edit_lock_ = true
 
 [node name="TeamList" type="Control" parent="NewLeagueMode" unique_id=377632072]
 anchors_preset = 0
-offset_left = 1410.0
+offset_left = 2.0
 offset_top = -2.0
-offset_right = 1785.0
+offset_right = 377.0
 offset_bottom = 870.0
 
 [node name="BackgroundPanel" type="Panel" parent="NewLeagueMode/TeamList" unique_id=633744488]
@@ -247,10 +268,24 @@ metadata/_edit_lock_ = true
 
 [node name="TeamDetailsView" type="Control" parent="NewLeagueMode" unique_id=820076719]
 anchors_preset = 0
-offset_left = 705.0
-offset_top = 94.0
-offset_right = 1045.0
-offset_bottom = 600.0
+offset_left = 1157.0
+offset_top = 9.0
+offset_right = 1751.0
+offset_bottom = 515.0
+
+[node name="Label" type="Label" parent="NewLeagueMode/TeamDetailsView" unique_id=1440202520]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_right = -15.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Team Details
+mayhaps rpg stats, averages, total skills, etc"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NewLeagueMode/TeamDetailsView" unique_id=431897876]
 layout_mode = 1
@@ -265,7 +300,17 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
+[node name="Panel" type="Panel" parent="NewLeagueMode/TeamDetailsView" unique_id=1066483265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
 [node name="DraftMode" type="Control" parent="." unique_id=138101514]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -481,6 +526,7 @@ offset_right = 1111.0
 offset_bottom = 337.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="DraftMode/SaveGameWindow" unique_id=1559308060]
 custom_minimum_size = Vector2(30, 40)
@@ -525,7 +571,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1120.0
 offset_top = 93.0
-offset_right = 1592.0
+offset_right = 1651.0
 offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -557,6 +603,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = SubResource("GDScript_kiw3p")
+metadata/_edit_lock_ = true
 
 [node name="DraftManager" type="Control" parent="." unique_id=245395802]
 visible = false
@@ -564,6 +611,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_aug50")
+metadata/_edit_lock_ = true
 
 [node name="LeagueMode" type="Control" parent="." unique_id=296906562]
 visible = false
@@ -575,6 +623,6 @@ offset_bottom = 634.0
 
 [connection signal="pressed" from="Dashboard/VBoxContainer/DraftButton" to="." method="_on_draft_button_pressed"]
 [connection signal="pressed" from="Dashboard/VBoxContainer/LeagueButton" to="." method="_on_league_button_pressed"]
-[connection signal="pressed" from="NewLeagueMode/VBoxContainer/CreateLeagueButton" to="." method="_on_create_league_button_pressed"]
+[connection signal="pressed" from="NewLeagueMode/CreateLeagueContainer/CreateLeagueButton" to="." method="_on_create_league_button_pressed"]
 [connection signal="pressed" from="DraftMode/SelectedPlayer/ConfirmPickButton" to="." method="_on_confirm_pick_button_pressed"]
 [connection signal="pressed" from="DraftMode/SaveGameWindow/SaveGameButton" to="." method="_on_save_game_button_pressed"]
