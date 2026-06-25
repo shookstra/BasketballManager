@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_kuje1"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_bbt80"]
+
+[sub_resource type="Resource" id="Resource_2svud"]
+script = ExtResource("2_bbt80")
+strength = 48
+agility = 64
+endurance = 58
+intelligence = 65
+charisma = 77
+
+[resource]
+script = ExtResource("1_kuje1")
+first_name = "Kian"
+last_name = "Fuller"
+stats = SubResource("Resource_2svud")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_ow7ch"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_0w2t5"]
+
+[sub_resource type="Resource" id="Resource_nrfix"]
+script = ExtResource("2_0w2t5")
+strength = 58
+agility = 43
+endurance = 75
+intelligence = 50
+charisma = 10
+
+[resource]
+script = ExtResource("1_ow7ch")
+first_name = "Quinn"
+last_name = "Petersen"
+stats = SubResource("Resource_nrfix")
+position = "Forward"
+age = 21

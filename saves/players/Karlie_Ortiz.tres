@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_wi3q0"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_k70fp"]
+
+[sub_resource type="Resource" id="Resource_fi5x2"]
+script = ExtResource("2_k70fp")
+strength = 53
+agility = 96
+endurance = 98
+intelligence = 82
+charisma = 59
+
+[resource]
+script = ExtResource("1_wi3q0")
+first_name = "Karlie"
+last_name = "Ortiz"
+stats = SubResource("Resource_fi5x2")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_trvoj"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_7kpc4"]
+
+[sub_resource type="Resource" id="Resource_mefn6"]
+script = ExtResource("2_7kpc4")
+strength = 66
+agility = 99
+endurance = 92
+intelligence = 40
+charisma = 14
+
+[resource]
+script = ExtResource("1_trvoj")
+first_name = "Kylee"
+last_name = "Curtis"
+stats = SubResource("Resource_mefn6")
+position = "Forward"
+age = 21

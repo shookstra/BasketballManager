@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_swvxo"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_c1481"]
+
+[sub_resource type="Resource" id="Resource_rc2db"]
+script = ExtResource("2_c1481")
+strength = 96
+agility = 40
+endurance = 51
+intelligence = 65
+charisma = 54
+
+[resource]
+script = ExtResource("1_swvxo")
+first_name = "Miles"
+last_name = "Dean"
+stats = SubResource("Resource_rc2db")
+position = "Forward"
+age = 21

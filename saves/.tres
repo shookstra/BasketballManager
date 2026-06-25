@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="SaveGameAsResource" format=3]
+
+[ext_resource type="Script" path="res://resources/team.gd" id="1_7se5u"]
+[ext_resource type="Script" path="res://resources/draft.gd" id="2_4o8bw"]
+[ext_resource type="Script" path="res://resources/league.gd" id="3_38753"]
+[ext_resource type="Script" path="res://resources/player.gd" id="4_gecno"]
+[ext_resource type="Script" path="res://resources/save_game_as_resource.gd" id="5_adj5t"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="6_qypiu"]
+
+[sub_resource type="Resource" id="Resource_va6pl"]
+script = ExtResource("1_7se5u")
+name = "Default Name"
+city = "Default City"
+
+[sub_resource type="Resource" id="Resource_5vxah"]
+script = ExtResource("2_4o8bw")
+
+[sub_resource type="Resource" id="Resource_6fmcn"]
+script = ExtResource("3_38753")
+
+[sub_resource type="Resource" id="Resource_1evj3"]
+script = ExtResource("1_7se5u")
+name = "Default Name"
+city = "Default City"
+
+[sub_resource type="Resource" id="Resource_714qr"]
+script = ExtResource("6_qypiu")
+
+[sub_resource type="Resource" id="Resource_mpgbo"]
+script = ExtResource("4_gecno")
+first_name = "Default First Name"
+last_name = "Default Last Name"
+stats = SubResource("Resource_714qr")
+position = "Forward"
+age = 21
+
+[resource]
+script = ExtResource("5_adj5t")
+selected_player = SubResource("Resource_mpgbo")
+draft = SubResource("Resource_5vxah")
+league = SubResource("Resource_6fmcn")
+player_team = SubResource("Resource_1evj3")
+current_team = SubResource("Resource_va6pl")

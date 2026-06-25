@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_2c5ti"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_yf7je"]
+
+[sub_resource type="Resource" id="Resource_ky2nn"]
+script = ExtResource("2_yf7je")
+strength = 54
+agility = 62
+endurance = 99
+intelligence = 58
+charisma = 83
+
+[resource]
+script = ExtResource("1_2c5ti")
+first_name = "Roger"
+last_name = "Rush"
+stats = SubResource("Resource_ky2nn")
+position = "Forward"
+age = 21

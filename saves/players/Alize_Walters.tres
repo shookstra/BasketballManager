@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_ymd0s"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_nhbm7"]
+
+[sub_resource type="Resource" id="Resource_djw36"]
+script = ExtResource("2_nhbm7")
+strength = 24
+agility = 68
+endurance = 89
+intelligence = 92
+charisma = 60
+
+[resource]
+script = ExtResource("1_ymd0s")
+first_name = "Alize"
+last_name = "Walters"
+stats = SubResource("Resource_djw36")
+position = "Forward"
+age = 21

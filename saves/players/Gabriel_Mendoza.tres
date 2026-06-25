@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_wyyqi"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_cjn2n"]
+
+[sub_resource type="Resource" id="Resource_o3q5c"]
+script = ExtResource("2_cjn2n")
+strength = 87
+agility = 82
+endurance = 89
+intelligence = 58
+charisma = 17
+
+[resource]
+script = ExtResource("1_wyyqi")
+first_name = "Gabriel"
+last_name = "Mendoza"
+stats = SubResource("Resource_o3q5c")
+position = "Forward"
+age = 21

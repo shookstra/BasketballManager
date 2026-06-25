@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_afb7w"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_rj8tf"]
+
+[sub_resource type="Resource" id="Resource_4l5gr"]
+script = ExtResource("2_rj8tf")
+strength = 34
+agility = 93
+endurance = 57
+intelligence = 66
+charisma = 19
+
+[resource]
+script = ExtResource("1_afb7w")
+first_name = "Bennett"
+last_name = "Boyd"
+stats = SubResource("Resource_4l5gr")
+position = "Forward"
+age = 21

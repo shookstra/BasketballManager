@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_p7fqk"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_vl7fj"]
+
+[sub_resource type="Resource" id="Resource_l5fv6"]
+script = ExtResource("2_vl7fj")
+strength = 73
+agility = 90
+endurance = 67
+intelligence = 59
+charisma = 16
+
+[resource]
+script = ExtResource("1_p7fqk")
+first_name = "Brenton"
+last_name = "Brandt"
+stats = SubResource("Resource_l5fv6")
+position = "Forward"
+age = 21

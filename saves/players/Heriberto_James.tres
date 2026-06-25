@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_miiwk"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_5x8wl"]
+
+[sub_resource type="Resource" id="Resource_5lkti"]
+script = ExtResource("2_5x8wl")
+strength = 41
+agility = 95
+endurance = 85
+intelligence = 51
+charisma = 72
+
+[resource]
+script = ExtResource("1_miiwk")
+first_name = "Heriberto"
+last_name = "James"
+stats = SubResource("Resource_5lkti")
+position = "Forward"
+age = 21

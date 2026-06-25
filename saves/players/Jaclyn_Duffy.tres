@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_koysa"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_2v05r"]
+
+[sub_resource type="Resource" id="Resource_67ci6"]
+script = ExtResource("2_2v05r")
+strength = 68
+agility = 93
+endurance = 84
+intelligence = 86
+charisma = 88
+
+[resource]
+script = ExtResource("1_koysa")
+first_name = "Jaclyn"
+last_name = "Duffy"
+stats = SubResource("Resource_67ci6")
+position = "Forward"
+age = 21

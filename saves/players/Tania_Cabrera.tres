@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_4cfpd"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_itte0"]
+
+[sub_resource type="Resource" id="Resource_3r64e"]
+script = ExtResource("2_itte0")
+strength = 21
+agility = 94
+endurance = 84
+intelligence = 71
+charisma = 31
+
+[resource]
+script = ExtResource("1_4cfpd")
+first_name = "Tania"
+last_name = "Cabrera"
+stats = SubResource("Resource_3r64e")
+position = "Forward"
+age = 21

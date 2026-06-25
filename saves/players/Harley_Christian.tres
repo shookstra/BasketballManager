@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_13bjj"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_gtctg"]
+
+[sub_resource type="Resource" id="Resource_mqt3e"]
+script = ExtResource("2_gtctg")
+strength = 40
+agility = 97
+endurance = 83
+intelligence = 45
+charisma = 99
+
+[resource]
+script = ExtResource("1_13bjj")
+first_name = "Harley"
+last_name = "Christian"
+stats = SubResource("Resource_mqt3e")
+position = "Forward"
+age = 21

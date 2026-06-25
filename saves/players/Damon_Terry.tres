@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_os4w6"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_h06nt"]
+
+[sub_resource type="Resource" id="Resource_iob8b"]
+script = ExtResource("2_h06nt")
+strength = 25
+agility = 64
+endurance = 61
+intelligence = 73
+charisma = 39
+
+[resource]
+script = ExtResource("1_os4w6")
+first_name = "Damon"
+last_name = "Terry"
+stats = SubResource("Resource_iob8b")
+position = "Forward"
+age = 21

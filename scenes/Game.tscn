@@ -1,0 +1,608 @@
+[gd_scene format=3 uid="uid://b4yc5hnis3sgv"]
+
+[ext_resource type="PackedScene" uid="uid://clewfriuw136p" path="res://scenes/Dashboard.tscn" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://dr7v318obfwk" path="res://scripts/game.gd" id="1_qbsmt"]
+[ext_resource type="Theme" uid="uid://c5p4ivn6j71pr" path="res://resources/main_theme.tres" id="1_s0nni"]
+[ext_resource type="PackedScene" uid="uid://cbogw7qnb1twm" path="res://scenes/TeamGenerator.tscn" id="2_cpr0p"]
+[ext_resource type="StyleBox" uid="uid://0uc1sx384q58" path="res://styles/transparent_box_flat.tres" id="5_kiw3p"]
+[ext_resource type="StyleBox" uid="uid://cuhgu0shw0h5f" path="res://styles/blue_style_box_flat.tres" id="6_400sg"]
+[ext_resource type="Script" uid="uid://cq8krumrm207n" path="res://scripts/draft_manager.gd" id="6_aug50"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_400sg"]
+bg_color = Color(0.43529412, 0.40392157, 0.4627451, 0.3529412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="GDScript" id="GDScript_kiw3p"]
+script/source = "extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+func load_save_game() -> Resource:
+	return ResourceLoader.load(\"res://saves/save.tres\", \"\", ResourceLoader.CACHE_MODE_IGNORE)
+
+func save_game():
+	#var players: Array[Player] = Data.players
+	#for player in players:
+		#var save_players_response = ResourceSaver.save(player, \"res://saves/players/\" + player.first_name + \"_\" + player.last_name + \".tres\")
+		#if save_players_response:
+			#print(\"Save Failed\")
+	#pass
+	
+	var save_data: SaveGameAsResource = SaveGameAsResource.new()
+	var save_game_response = ResourceSaver.save(save_data, \"res://saves/save.tres\", )
+	if save_game_response:
+		print(\"Save Failed\")
+"
+
+[node name="Game" type="Control" unique_id=1370035069]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s0nni")
+script = ExtResource("1_qbsmt")
+
+[node name="TeamGenerator" parent="." unique_id=596372754 instance=ExtResource("2_cpr0p")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Dashboard" parent="." unique_id=702095066 instance=ExtResource("1_ibkli")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="BackgroundColorRect" type="ColorRect" parent="Dashboard" unique_id=679719646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2627451, 0.20392157, 0.33333334, 1)
+metadata/_edit_lock_ = true
+
+[node name="SidebarColorRect" type="ColorRect" parent="Dashboard" unique_id=592965656]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 91.0
+grow_vertical = 2
+color = Color(0.4, 0.3764706, 0.57254905, 1)
+metadata/_edit_lock_ = true
+
+[node name="SidebarColorRect2" type="ColorRect" parent="Dashboard" unique_id=479913438]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 91.0
+offset_bottom = 41.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TeamNameLabel" type="Label" parent="Dashboard/SidebarColorRect2" unique_id=2008805286]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 321.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Team Name"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dashboard" unique_id=1067874570]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 640.0
+metadata/_edit_lock_ = true
+
+[node name="DraftButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=1861095059]
+layout_mode = 2
+text = "Draft
+"
+
+[node name="LeagueButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=1435029498]
+layout_mode = 2
+text = "League"
+
+[node name="RosterButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=750615770]
+layout_mode = 2
+text = "Roster"
+
+[node name="SettingsButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=1277091661]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExhibitionMode" type="Node" parent="." unique_id=1376032366]
+
+[node name="NewLeagueMode" type="Control" parent="." unique_id=61726855]
+visible = false
+anchors_preset = 0
+offset_left = 107.0
+offset_top = 51.0
+offset_right = 367.0
+offset_bottom = 429.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewLeagueMode" unique_id=1861616802]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 239.0
+theme_override_constants/separation = 8
+
+[node name="NewLeagueLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1749129793]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Create New League"
+
+[node name="LeagueNameLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=960019508]
+layout_mode = 2
+text = "League Name"
+
+[node name="LeagueNameLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=441728392]
+layout_mode = 2
+text = "PWBL"
+
+[node name="CityLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1282849014]
+layout_mode = 2
+text = "City"
+
+[node name="CityLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=1794715263]
+layout_mode = 2
+text = "Lincoln"
+
+[node name="NewLeagueLabel3" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1785850074]
+layout_mode = 2
+text = "Team Name"
+
+[node name="TeamNameLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=663243790]
+layout_mode = 2
+text = "Sowers"
+
+[node name="GMLabel" type="Label" parent="NewLeagueMode/VBoxContainer" unique_id=1012920476]
+layout_mode = 2
+text = "General Manager"
+
+[node name="GMLineEdit" type="LineEdit" parent="NewLeagueMode/VBoxContainer" unique_id=793654193]
+layout_mode = 2
+text = "Semmy"
+
+[node name="CreateLeagueButton" type="Button" parent="NewLeagueMode/VBoxContainer" unique_id=1730994410]
+layout_mode = 2
+text = "Create League"
+
+[node name="TeamList" type="Control" parent="NewLeagueMode" unique_id=377632072]
+anchors_preset = 0
+offset_left = 1410.0
+offset_top = -2.0
+offset_right = 1785.0
+offset_bottom = 870.0
+
+[node name="BackgroundPanel" type="Panel" parent="NewLeagueMode/TeamList" unique_id=633744488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_kiw3p")
+metadata/_edit_lock_ = true
+
+[node name="HeaderPanel" type="Panel" parent="NewLeagueMode/TeamList" unique_id=210960792]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="HeaderLabel" type="Label" parent="NewLeagueMode/TeamList/HeaderPanel" unique_id=1362725830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Teams"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NewLeagueMode/TeamList" unique_id=905642169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewLeagueMode/TeamList/ScrollContainer" unique_id=1434981660]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="TeamDetailsView" type="Control" parent="NewLeagueMode" unique_id=820076719]
+anchors_preset = 0
+offset_left = 705.0
+offset_top = 94.0
+offset_right = 1045.0
+offset_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewLeagueMode/TeamDetailsView" unique_id=431897876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 47.0
+offset_right = -4.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="DraftMode" type="Control" parent="." unique_id=138101514]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RoundLabel" type="Label" parent="DraftMode" unique_id=1075372022]
+layout_mode = 0
+offset_left = 934.0
+offset_top = 46.0
+offset_right = 1053.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Round 1"
+
+[node name="AvailablePlayers" type="Panel" parent="DraftMode" unique_id=1513581539]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 92.0
+offset_right = 850.0
+offset_bottom = 592.0
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = ExtResource("5_kiw3p")
+
+[node name="Panel" type="Panel" parent="DraftMode/AvailablePlayers" unique_id=989649931]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+
+[node name="NameLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=495714303]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -10.0
+offset_right = 113.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "Player"
+horizontal_alignment = 1
+
+[node name="StrengthLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=634733715]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 10.0
+offset_right = 263.0
+offset_bottom = 30.0
+text = "Str"
+horizontal_alignment = 1
+
+[node name="AgilityLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=23319606]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 10.0
+offset_right = 313.0
+offset_bottom = 30.0
+text = "Agi"
+horizontal_alignment = 1
+
+[node name="EnduranceLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=598949814]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 30.0
+text = "End"
+horizontal_alignment = 1
+
+[node name="IntelligenceLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=232152802]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 10.0
+offset_right = 453.0
+offset_bottom = 30.0
+text = "Int"
+horizontal_alignment = 1
+
+[node name="CharismaLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=1903292562]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 10.0
+offset_right = 507.0
+offset_bottom = 30.0
+text = "Cha"
+horizontal_alignment = 1
+
+[node name="MinutesPlayedLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=1398448682]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 10.0
+offset_right = 554.0
+offset_bottom = 30.0
+text = "MP"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=366428469]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 10.0
+offset_right = 618.0
+offset_bottom = 30.0
+text = "PTS"
+horizontal_alignment = 1
+
+[node name="ReboundsLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=1828940579]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 10.0
+offset_right = 671.0
+offset_bottom = 30.0
+text = "TRB"
+horizontal_alignment = 1
+
+[node name="AssistsLabel" type="Label" parent="DraftMode/AvailablePlayers/Panel" unique_id=555604459]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 10.0
+offset_right = 722.0
+offset_bottom = 30.0
+text = "AST"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DraftMode/AvailablePlayers" unique_id=1934149132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 53.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DraftMode/AvailablePlayers/ScrollContainer" unique_id=699744032]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+metadata/_edit_lock_ = true
+
+[node name="SelectedPlayer" type="Panel" parent="DraftMode" unique_id=815688568]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 92.0
+offset_right = 1110.0
+offset_bottom = 235.0
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
+
+[node name="Panel" type="Panel" parent="DraftMode/SelectedPlayer" unique_id=427511358]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="DraftMode/SelectedPlayer/Panel" unique_id=134658628]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Selected Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ConfirmPickButton" type="Button" parent="DraftMode/SelectedPlayer" unique_id=72201529]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -47.0
+offset_right = -5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+metadata/_edit_lock_ = true
+
+[node name="SelectedPlayerLabel" type="Label" parent="DraftMode/SelectedPlayer" unique_id=1188115253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="SimulateRound" type="Panel" parent="DraftMode" unique_id=774054524]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 240.0
+offset_right = 1110.0
+offset_bottom = 335.0
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
+
+[node name="Panel" type="Panel" parent="DraftMode/SimulateRound" unique_id=255274916]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="DraftMode/SimulateRound/Panel" unique_id=1961121809]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Simulate Round"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ConfirmPickButton" type="Button" parent="DraftMode/SimulateRound" unique_id=464640658]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -47.0
+offset_right = -5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+metadata/_edit_lock_ = true
+
+[node name="SaveGameWindow" type="Panel" parent="DraftMode" unique_id=1148457244]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 341.0
+offset_right = 1110.0
+offset_bottom = 436.0
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
+
+[node name="Panel" type="Panel" parent="DraftMode/SaveGameWindow" unique_id=1559308060]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="DraftMode/SaveGameWindow/Panel" unique_id=48209224]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Save Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="SaveGameButton" type="Button" parent="DraftMode/SaveGameWindow" unique_id=1850301312]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -47.0
+offset_right = -5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+metadata/_edit_lock_ = true
+
+[node name="DraftPicksWindow" type="Panel" parent="DraftMode" unique_id=1686705087]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1139.0
+offset_top = 56.0
+offset_right = 1844.0
+offset_bottom = 1001.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DraftMode/DraftPicksWindow" unique_id=1752464217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DraftMode/DraftPicksWindow/ScrollContainer" unique_id=1551573728]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="SaveManager" type="Control" parent="." unique_id=988058121]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_kiw3p")
+
+[node name="DraftManager" type="Control" parent="." unique_id=245395802]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_aug50")
+
+[node name="LeagueMode" type="Control" parent="." unique_id=296906562]
+visible = false
+anchors_preset = 0
+offset_left = 104.0
+offset_top = 78.0
+offset_right = 1142.0
+offset_bottom = 634.0
+
+[connection signal="pressed" from="Dashboard/VBoxContainer/DraftButton" to="." method="_on_draft_button_pressed"]
+[connection signal="pressed" from="Dashboard/VBoxContainer/LeagueButton" to="." method="_on_league_button_pressed"]
+[connection signal="pressed" from="NewLeagueMode/VBoxContainer/CreateLeagueButton" to="." method="_on_create_league_button_pressed"]
+[connection signal="pressed" from="DraftMode/SelectedPlayer/ConfirmPickButton" to="." method="_on_confirm_pick_button_pressed"]
+[connection signal="pressed" from="DraftMode/SaveGameWindow/SaveGameButton" to="." method="_on_save_game_button_pressed"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_46fx6"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_d37i6"]
+
+[sub_resource type="Resource" id="Resource_v4oep"]
+script = ExtResource("2_d37i6")
+strength = 52
+agility = 64
+endurance = 61
+intelligence = 77
+charisma = 65
+
+[resource]
+script = ExtResource("1_46fx6")
+first_name = "Johnny"
+last_name = "Hammond"
+stats = SubResource("Resource_v4oep")
+position = "Forward"
+age = 21

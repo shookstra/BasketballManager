@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_bxc1x"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_kwiw8"]
+
+[sub_resource type="Resource" id="Resource_pxpdu"]
+script = ExtResource("2_kwiw8")
+strength = 23
+agility = 99
+endurance = 58
+intelligence = 97
+charisma = 66
+
+[resource]
+script = ExtResource("1_bxc1x")
+first_name = "Jaden"
+last_name = "Clarke"
+stats = SubResource("Resource_pxpdu")
+position = "Forward"
+age = 21

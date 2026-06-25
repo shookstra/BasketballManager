@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_sw20w"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_mibni"]
+
+[sub_resource type="Resource" id="Resource_kuv7h"]
+script = ExtResource("2_mibni")
+strength = 48
+agility = 44
+endurance = 92
+intelligence = 100
+charisma = 20
+
+[resource]
+script = ExtResource("1_sw20w")
+first_name = "Amy"
+last_name = "Morrison"
+stats = SubResource("Resource_kuv7h")
+position = "Forward"
+age = 21

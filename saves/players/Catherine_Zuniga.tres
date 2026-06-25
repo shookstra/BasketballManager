@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_w4ac8"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_42wmd"]
+
+[sub_resource type="Resource" id="Resource_ldvld"]
+script = ExtResource("2_42wmd")
+strength = 87
+agility = 82
+endurance = 90
+intelligence = 76
+charisma = 45
+
+[resource]
+script = ExtResource("1_w4ac8")
+first_name = "Catherine"
+last_name = "Zuniga"
+stats = SubResource("Resource_ldvld")
+position = "Forward"
+age = 21

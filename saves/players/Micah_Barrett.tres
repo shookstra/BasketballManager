@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_ftvm1"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_41q7t"]
+
+[sub_resource type="Resource" id="Resource_5gh7t"]
+script = ExtResource("2_41q7t")
+strength = 50
+agility = 53
+endurance = 83
+intelligence = 77
+charisma = 20
+
+[resource]
+script = ExtResource("1_ftvm1")
+first_name = "Micah"
+last_name = "Barrett"
+stats = SubResource("Resource_5gh7t")
+position = "Forward"
+age = 21

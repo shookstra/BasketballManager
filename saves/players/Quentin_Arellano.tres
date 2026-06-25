@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_j0ais"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_6x7es"]
+
+[sub_resource type="Resource" id="Resource_f702g"]
+script = ExtResource("2_6x7es")
+strength = 72
+agility = 100
+endurance = 98
+intelligence = 94
+charisma = 73
+
+[resource]
+script = ExtResource("1_j0ais")
+first_name = "Quentin"
+last_name = "Arellano"
+stats = SubResource("Resource_f702g")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_18k0l"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_xi2g8"]
+
+[sub_resource type="Resource" id="Resource_3p6wu"]
+script = ExtResource("2_xi2g8")
+strength = 20
+agility = 45
+endurance = 97
+intelligence = 69
+charisma = 92
+
+[resource]
+script = ExtResource("1_18k0l")
+first_name = "Devante"
+last_name = "Blankenship"
+stats = SubResource("Resource_3p6wu")
+position = "Forward"
+age = 21

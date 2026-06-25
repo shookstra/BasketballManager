@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_1seq5"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_rtw83"]
+
+[sub_resource type="Resource" id="Resource_bmoba"]
+script = ExtResource("2_rtw83")
+strength = 28
+agility = 42
+endurance = 63
+intelligence = 42
+charisma = 60
+
+[resource]
+script = ExtResource("1_1seq5")
+first_name = "Kinsey"
+last_name = "Mccormick"
+stats = SubResource("Resource_bmoba")
+position = "Forward"
+age = 21

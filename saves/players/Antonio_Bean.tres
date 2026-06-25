@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_nqok8"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_ioyj5"]
+
+[sub_resource type="Resource" id="Resource_d6tw5"]
+script = ExtResource("2_ioyj5")
+strength = 36
+agility = 80
+endurance = 95
+intelligence = 78
+charisma = 95
+
+[resource]
+script = ExtResource("1_nqok8")
+first_name = "Antonio"
+last_name = "Bean"
+stats = SubResource("Resource_d6tw5")
+position = "Forward"
+age = 21

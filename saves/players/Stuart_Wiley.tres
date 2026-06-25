@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_gv1el"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_pg6id"]
+
+[sub_resource type="Resource" id="Resource_y36wd"]
+script = ExtResource("2_pg6id")
+strength = 94
+agility = 87
+endurance = 63
+intelligence = 98
+charisma = 21
+
+[resource]
+script = ExtResource("1_gv1el")
+first_name = "Stuart"
+last_name = "Wiley"
+stats = SubResource("Resource_y36wd")
+position = "Forward"
+age = 21

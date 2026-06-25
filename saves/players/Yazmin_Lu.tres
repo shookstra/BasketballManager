@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_rq2i8"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_cj3oy"]
+
+[sub_resource type="Resource" id="Resource_7orls"]
+script = ExtResource("2_cj3oy")
+strength = 100
+agility = 51
+endurance = 87
+intelligence = 85
+charisma = 28
+
+[resource]
+script = ExtResource("1_rq2i8")
+first_name = "Yazmin"
+last_name = "Lu"
+stats = SubResource("Resource_7orls")
+position = "Forward"
+age = 21

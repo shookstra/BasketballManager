@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bap8d0bfdu6ci"]
+
+[ext_resource type="Theme" uid="uid://c5p4ivn6j71pr" path="res://resources/main_theme.tres" id="1_ivnlm"]
+[ext_resource type="Script" uid="uid://cc2gqe0brjeo6" path="res://scripts/player_card.gd" id="1_qxqhp"]
+[ext_resource type="Script" uid="uid://byqsytdha5nbd" path="res://resources/player.gd" id="2_c47uq"]
+
+[sub_resource type="Resource" id="Resource_ivnlm"]
+script = ExtResource("2_c47uq")
+first_name = "Semmy"
+last_name = "Sammy"
+metadata/_custom_type_script = "uid://byqsytdha5nbd"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivnlm"]
+draw_center = false
+
+[node name="PlayerCard" type="Control" unique_id=1052228286]
+custom_minimum_size = Vector2(60, 35)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -421.0
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ivnlm")
+script = ExtResource("1_qxqhp")
+player = SubResource("Resource_ivnlm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=896997399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme = ExtResource("1_ivnlm")
+theme_override_constants/separation = 30
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=1391060400]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Firstname Lastname"
+
+[node name="StrengthLabel" type="Label" parent="HBoxContainer" unique_id=1139067743]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "80"
+
+[node name="AgilityLabel" type="Label" parent="HBoxContainer" unique_id=1073123849]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "80	"
+
+[node name="EnduranceLabel" type="Label" parent="HBoxContainer" unique_id=2113539867]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "80	"
+
+[node name="IntelligenceLabel" type="Label" parent="HBoxContainer" unique_id=40447876]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "80	"
+
+[node name="CharismaLabel" type="Label" parent="HBoxContainer" unique_id=935157795]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "80"
+
+[node name="MinutesPlayedLabel" type="Label" parent="HBoxContainer" unique_id=1236777049]
+layout_mode = 2
+text = "32:14"
+
+[node name="PointsLabel" type="Label" parent="HBoxContainer" unique_id=1403603405]
+layout_mode = 2
+text = "24"
+
+[node name="ReboundsLabel" type="Label" parent="HBoxContainer" unique_id=2100704257]
+layout_mode = 2
+text = "3.3"
+
+[node name="AssistsLabel" type="Label" parent="HBoxContainer" unique_id=279349769]
+layout_mode = 2
+text = "8.1"
+
+[node name="Button" type="Button" parent="." unique_id=1626506505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ivnlm")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_bcbgw"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_boetc"]
+
+[sub_resource type="Resource" id="Resource_am67w"]
+script = ExtResource("2_boetc")
+strength = 80
+agility = 43
+endurance = 79
+intelligence = 83
+charisma = 70
+
+[resource]
+script = ExtResource("1_bcbgw")
+first_name = "Evelyn"
+last_name = "Pope"
+stats = SubResource("Resource_am67w")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_vhr3f"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_xcsfp"]
+
+[sub_resource type="Resource" id="Resource_6qpos"]
+script = ExtResource("2_xcsfp")
+strength = 99
+agility = 47
+endurance = 68
+intelligence = 69
+charisma = 78
+
+[resource]
+script = ExtResource("1_vhr3f")
+first_name = "Kamryn"
+last_name = "Wallace"
+stats = SubResource("Resource_6qpos")
+position = "Forward"
+age = 21

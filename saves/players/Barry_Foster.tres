@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_r5o8x"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_jyiue"]
+
+[sub_resource type="Resource" id="Resource_yggqx"]
+script = ExtResource("2_jyiue")
+strength = 43
+agility = 78
+endurance = 59
+intelligence = 44
+charisma = 96
+
+[resource]
+script = ExtResource("1_r5o8x")
+first_name = "Barry"
+last_name = "Foster"
+stats = SubResource("Resource_yggqx")
+position = "Forward"
+age = 21

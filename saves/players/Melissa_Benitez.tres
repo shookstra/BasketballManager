@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_54n7p"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_4nprc"]
+
+[sub_resource type="Resource" id="Resource_xc2yn"]
+script = ExtResource("2_4nprc")
+strength = 24
+agility = 65
+endurance = 100
+intelligence = 60
+charisma = 66
+
+[resource]
+script = ExtResource("1_54n7p")
+first_name = "Melissa"
+last_name = "Benitez"
+stats = SubResource("Resource_xc2yn")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_57e8q"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_ubims"]
+
+[sub_resource type="Resource" id="Resource_glb3f"]
+script = ExtResource("2_ubims")
+strength = 54
+agility = 46
+endurance = 86
+intelligence = 41
+charisma = 49
+
+[resource]
+script = ExtResource("1_57e8q")
+first_name = "Donnie"
+last_name = "Hodges"
+stats = SubResource("Resource_glb3f")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_ojnft"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_50djk"]
+
+[sub_resource type="Resource" id="Resource_qr102"]
+script = ExtResource("2_50djk")
+strength = 23
+agility = 95
+endurance = 88
+intelligence = 50
+charisma = 79
+
+[resource]
+script = ExtResource("1_ojnft")
+first_name = "Devon"
+last_name = "Carrillo"
+stats = SubResource("Resource_qr102")
+position = "Forward"
+age = 21

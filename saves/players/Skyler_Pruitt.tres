@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_lhx86"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_l4wvn"]
+
+[sub_resource type="Resource" id="Resource_s7l61"]
+script = ExtResource("2_l4wvn")
+strength = 49
+agility = 90
+endurance = 77
+intelligence = 100
+charisma = 64
+
+[resource]
+script = ExtResource("1_lhx86")
+first_name = "Skyler"
+last_name = "Pruitt"
+stats = SubResource("Resource_s7l61")
+position = "Forward"
+age = 21

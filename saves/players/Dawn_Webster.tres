@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_tt5hm"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_u34qm"]
+
+[sub_resource type="Resource" id="Resource_wi1i0"]
+script = ExtResource("2_u34qm")
+strength = 97
+agility = 84
+endurance = 68
+intelligence = 61
+charisma = 12
+
+[resource]
+script = ExtResource("1_tt5hm")
+first_name = "Dawn"
+last_name = "Webster"
+stats = SubResource("Resource_wi1i0")
+position = "Forward"
+age = 21

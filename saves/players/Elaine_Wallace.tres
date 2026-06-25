@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_k0vgl"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_dbdfu"]
+
+[sub_resource type="Resource" id="Resource_1dtoh"]
+script = ExtResource("2_dbdfu")
+strength = 25
+agility = 99
+endurance = 64
+intelligence = 72
+charisma = 55
+
+[resource]
+script = ExtResource("1_k0vgl")
+first_name = "Elaine"
+last_name = "Wallace"
+stats = SubResource("Resource_1dtoh")
+position = "Forward"
+age = 21

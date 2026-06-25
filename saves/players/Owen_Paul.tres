@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_8vy2d"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_7frrr"]
+
+[sub_resource type="Resource" id="Resource_q8qny"]
+script = ExtResource("2_7frrr")
+strength = 84
+agility = 62
+endurance = 96
+intelligence = 45
+charisma = 68
+
+[resource]
+script = ExtResource("1_8vy2d")
+first_name = "Owen"
+last_name = "Paul"
+stats = SubResource("Resource_q8qny")
+position = "Forward"
+age = 21

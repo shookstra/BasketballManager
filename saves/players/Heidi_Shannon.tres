@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_abnd6"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_7x5gq"]
+
+[sub_resource type="Resource" id="Resource_f74gr"]
+script = ExtResource("2_7x5gq")
+strength = 84
+agility = 83
+endurance = 83
+intelligence = 40
+charisma = 34
+
+[resource]
+script = ExtResource("1_abnd6")
+first_name = "Heidi"
+last_name = "Shannon"
+stats = SubResource("Resource_f74gr")
+position = "Forward"
+age = 21

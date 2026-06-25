@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_fjbr0"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_nk74r"]
+
+[sub_resource type="Resource" id="Resource_afpam"]
+script = ExtResource("2_nk74r")
+strength = 41
+agility = 43
+endurance = 60
+intelligence = 95
+charisma = 35
+
+[resource]
+script = ExtResource("1_fjbr0")
+first_name = "Chaz"
+last_name = "Arnold"
+stats = SubResource("Resource_afpam")
+position = "Forward"
+age = 21

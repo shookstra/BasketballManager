@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_aaekn"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_sctlp"]
+
+[sub_resource type="Resource" id="Resource_4ld82"]
+script = ExtResource("2_sctlp")
+strength = 99
+agility = 69
+endurance = 70
+intelligence = 43
+charisma = 82
+
+[resource]
+script = ExtResource("1_aaekn")
+first_name = "Rigoberto"
+last_name = "Woodard"
+stats = SubResource("Resource_4ld82")
+position = "Forward"
+age = 21

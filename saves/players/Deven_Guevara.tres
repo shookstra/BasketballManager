@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_6r8lm"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_fqd33"]
+
+[sub_resource type="Resource" id="Resource_13f1d"]
+script = ExtResource("2_fqd33")
+strength = 91
+agility = 40
+endurance = 85
+intelligence = 96
+charisma = 21
+
+[resource]
+script = ExtResource("1_6r8lm")
+first_name = "Deven"
+last_name = "Guevara"
+stats = SubResource("Resource_13f1d")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_47cdi"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_x1yj2"]
+
+[sub_resource type="Resource" id="Resource_icrbg"]
+script = ExtResource("2_x1yj2")
+strength = 90
+agility = 63
+endurance = 85
+intelligence = 68
+charisma = 21
+
+[resource]
+script = ExtResource("1_47cdi")
+first_name = "Derick"
+last_name = "Jimenez"
+stats = SubResource("Resource_icrbg")
+position = "Forward"
+age = 21

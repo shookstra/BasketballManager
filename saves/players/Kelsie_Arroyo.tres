@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_lax4k"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_mrgj0"]
+
+[sub_resource type="Resource" id="Resource_ptj4a"]
+script = ExtResource("2_mrgj0")
+strength = 78
+agility = 71
+endurance = 62
+intelligence = 62
+charisma = 95
+
+[resource]
+script = ExtResource("1_lax4k")
+first_name = "Kelsie"
+last_name = "Arroyo"
+stats = SubResource("Resource_ptj4a")
+position = "Forward"
+age = 21

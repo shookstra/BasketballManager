@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_bk8qq"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_hlush"]
+
+[sub_resource type="Resource" id="Resource_278c7"]
+script = ExtResource("2_hlush")
+strength = 91
+agility = 84
+endurance = 81
+intelligence = 62
+charisma = 12
+
+[resource]
+script = ExtResource("1_bk8qq")
+first_name = "Skylar"
+last_name = "Barker"
+stats = SubResource("Resource_278c7")
+position = "Forward"
+age = 21

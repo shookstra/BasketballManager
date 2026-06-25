@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_8i1rq"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_awffw"]
+
+[sub_resource type="Resource" id="Resource_1nnpj"]
+script = ExtResource("2_awffw")
+strength = 36
+agility = 89
+endurance = 94
+intelligence = 57
+charisma = 71
+
+[resource]
+script = ExtResource("1_8i1rq")
+first_name = "Zion"
+last_name = "Chapman"
+stats = SubResource("Resource_1nnpj")
+position = "Forward"
+age = 21

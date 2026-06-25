@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_p42c3"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_scdh4"]
+
+[sub_resource type="Resource" id="Resource_x2qpd"]
+script = ExtResource("2_scdh4")
+strength = 31
+agility = 73
+endurance = 61
+intelligence = 48
+charisma = 87
+
+[resource]
+script = ExtResource("1_p42c3")
+first_name = "Elyse"
+last_name = "S"
+stats = SubResource("Resource_x2qpd")
+position = "Forward"
+age = 21

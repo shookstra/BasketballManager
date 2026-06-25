@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_3jpk7"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_vhy0h"]
+
+[sub_resource type="Resource" id="Resource_ap5ts"]
+script = ExtResource("2_vhy0h")
+strength = 76
+agility = 46
+endurance = 77
+intelligence = 92
+charisma = 89
+
+[resource]
+script = ExtResource("1_3jpk7")
+first_name = "Isabela"
+last_name = "Bates"
+stats = SubResource("Resource_ap5ts")
+position = "Forward"
+age = 21

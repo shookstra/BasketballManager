@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_gwyi2"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_0e8pg"]
+
+[sub_resource type="Resource" id="Resource_cbyy3"]
+script = ExtResource("2_0e8pg")
+strength = 65
+agility = 47
+endurance = 90
+intelligence = 42
+charisma = 12
+
+[resource]
+script = ExtResource("1_gwyi2")
+first_name = "Adrien"
+last_name = "Daniels"
+stats = SubResource("Resource_cbyy3")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_k2ptn"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_ige7x"]
+
+[sub_resource type="Resource" id="Resource_sohq6"]
+script = ExtResource("2_ige7x")
+strength = 23
+agility = 91
+endurance = 63
+intelligence = 80
+charisma = 58
+
+[resource]
+script = ExtResource("1_k2ptn")
+first_name = "Sincere"
+last_name = "Schaefer"
+stats = SubResource("Resource_sohq6")
+position = "Forward"
+age = 21

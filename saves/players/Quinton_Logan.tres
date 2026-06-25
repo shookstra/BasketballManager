@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_2n67v"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_4kqrm"]
+
+[sub_resource type="Resource" id="Resource_vxglo"]
+script = ExtResource("2_4kqrm")
+strength = 86
+agility = 74
+endurance = 85
+intelligence = 78
+charisma = 52
+
+[resource]
+script = ExtResource("1_2n67v")
+first_name = "Quinton"
+last_name = "Logan"
+stats = SubResource("Resource_vxglo")
+position = "Forward"
+age = 21

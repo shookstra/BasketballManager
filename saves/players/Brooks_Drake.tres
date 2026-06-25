@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_2l5i3"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_nohjp"]
+
+[sub_resource type="Resource" id="Resource_bcpfx"]
+script = ExtResource("2_nohjp")
+strength = 70
+agility = 73
+endurance = 74
+intelligence = 62
+charisma = 94
+
+[resource]
+script = ExtResource("1_2l5i3")
+first_name = "Brooks"
+last_name = "Drake"
+stats = SubResource("Resource_bcpfx")
+position = "Forward"
+age = 21

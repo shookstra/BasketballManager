@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_4pnbc"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_7njjn"]
+
+[sub_resource type="Resource" id="Resource_c8t50"]
+script = ExtResource("2_7njjn")
+strength = 28
+agility = 100
+endurance = 78
+intelligence = 76
+charisma = 13
+
+[resource]
+script = ExtResource("1_4pnbc")
+first_name = "Bruno"
+last_name = "Berger"
+stats = SubResource("Resource_c8t50")
+position = "Forward"
+age = 21

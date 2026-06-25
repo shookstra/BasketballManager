@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_av5kk"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_cvyyg"]
+
+[sub_resource type="Resource" id="Resource_t7t4c"]
+script = ExtResource("2_cvyyg")
+strength = 36
+agility = 47
+endurance = 94
+intelligence = 89
+charisma = 48
+
+[resource]
+script = ExtResource("1_av5kk")
+first_name = "Paola"
+last_name = "Berry"
+stats = SubResource("Resource_t7t4c")
+position = "Forward"
+age = 21

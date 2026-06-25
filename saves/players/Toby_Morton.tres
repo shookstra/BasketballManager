@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_jtn6k"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_dq1id"]
+
+[sub_resource type="Resource" id="Resource_mwq2w"]
+script = ExtResource("2_dq1id")
+strength = 89
+agility = 58
+endurance = 88
+intelligence = 71
+charisma = 11
+
+[resource]
+script = ExtResource("1_jtn6k")
+first_name = "Toby"
+last_name = "Morton"
+stats = SubResource("Resource_mwq2w")
+position = "Forward"
+age = 21

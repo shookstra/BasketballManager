@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dlcfqv7sailt0"]
+
+[ext_resource type="Theme" uid="uid://c5p4ivn6j71pr" path="res://resources/main_theme.tres" id="1_1u61o"]
+[ext_resource type="Script" uid="uid://be2ivvkjivlyb" path="res://scripts/team_card.gd" id="2_vhhpa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivnlm"]
+draw_center = false
+
+[node name="TeamCard" type="Control" unique_id=1052228286]
+custom_minimum_size = Vector2(60, 35)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -421.0
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_1u61o")
+script = ExtResource("2_vhhpa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=896997399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme = ExtResource("1_1u61o")
+theme_override_constants/separation = 30
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=1391060400]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Firstname Lastname"
+
+[node name="WinsLabel" type="Label" parent="HBoxContainer" unique_id=1112153]
+layout_mode = 2
+text = "12"
+
+[node name="LossesLabel" type="Label" parent="HBoxContainer" unique_id=1529633022]
+layout_mode = 2
+text = "3"
+
+[node name="Button" type="Button" parent="." unique_id=1626506505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ivnlm")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

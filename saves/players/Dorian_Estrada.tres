@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_r4dmn"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_xoi6e"]
+
+[sub_resource type="Resource" id="Resource_6b6fa"]
+script = ExtResource("2_xoi6e")
+strength = 55
+agility = 97
+endurance = 95
+intelligence = 71
+charisma = 71
+
+[resource]
+script = ExtResource("1_r4dmn")
+first_name = "Dorian"
+last_name = "Estrada"
+stats = SubResource("Resource_6b6fa")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_ji4w5"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_v4887"]
+
+[sub_resource type="Resource" id="Resource_tjcc3"]
+script = ExtResource("2_v4887")
+strength = 66
+agility = 88
+endurance = 84
+intelligence = 95
+charisma = 12
+
+[resource]
+script = ExtResource("1_ji4w5")
+first_name = "Ricardo"
+last_name = "Stein"
+stats = SubResource("Resource_tjcc3")
+position = "Forward"
+age = 21

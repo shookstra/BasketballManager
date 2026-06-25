@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_8hy7x"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_haqt6"]
+
+[sub_resource type="Resource" id="Resource_uat16"]
+script = ExtResource("2_haqt6")
+strength = 64
+agility = 63
+endurance = 63
+intelligence = 78
+charisma = 42
+
+[resource]
+script = ExtResource("1_8hy7x")
+first_name = "Elisa"
+last_name = "Acosta"
+stats = SubResource("Resource_uat16")
+position = "Forward"
+age = 21

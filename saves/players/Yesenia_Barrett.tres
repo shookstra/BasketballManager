@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_sgxbb"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_lurou"]
+
+[sub_resource type="Resource" id="Resource_o7ghf"]
+script = ExtResource("2_lurou")
+strength = 54
+agility = 42
+endurance = 50
+intelligence = 54
+charisma = 62
+
+[resource]
+script = ExtResource("1_sgxbb")
+first_name = "Yesenia"
+last_name = "Barrett"
+stats = SubResource("Resource_o7ghf")
+position = "Forward"
+age = 21

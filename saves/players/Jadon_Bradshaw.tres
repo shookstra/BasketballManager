@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_r4lih"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_nx2f8"]
+
+[sub_resource type="Resource" id="Resource_ajif7"]
+script = ExtResource("2_nx2f8")
+strength = 47
+agility = 86
+endurance = 74
+intelligence = 76
+charisma = 43
+
+[resource]
+script = ExtResource("1_r4lih")
+first_name = "Jadon"
+last_name = "Bradshaw"
+stats = SubResource("Resource_ajif7")
+position = "Forward"
+age = 21

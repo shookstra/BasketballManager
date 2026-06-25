@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_17qln"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_jxp8r"]
+
+[sub_resource type="Resource" id="Resource_4nb8i"]
+script = ExtResource("2_jxp8r")
+strength = 36
+agility = 59
+endurance = 72
+intelligence = 53
+charisma = 36
+
+[resource]
+script = ExtResource("1_17qln")
+first_name = "Layla"
+last_name = "Harrison"
+stats = SubResource("Resource_4nb8i")
+position = "Forward"
+age = 21

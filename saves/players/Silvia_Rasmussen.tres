@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_35ipl"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_enkg7"]
+
+[sub_resource type="Resource" id="Resource_bqg1v"]
+script = ExtResource("2_enkg7")
+strength = 72
+agility = 46
+endurance = 53
+intelligence = 61
+charisma = 100
+
+[resource]
+script = ExtResource("1_35ipl")
+first_name = "Silvia"
+last_name = "Rasmussen"
+stats = SubResource("Resource_bqg1v")
+position = "Forward"
+age = 21

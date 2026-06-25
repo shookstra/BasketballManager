@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_vf7is"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_3x8vb"]
+
+[sub_resource type="Resource" id="Resource_lxssp"]
+script = ExtResource("2_3x8vb")
+strength = 83
+agility = 89
+endurance = 90
+intelligence = 62
+charisma = 89
+
+[resource]
+script = ExtResource("1_vf7is")
+first_name = "Teresa"
+last_name = "Rangel"
+stats = SubResource("Resource_lxssp")
+position = "Forward"
+age = 21

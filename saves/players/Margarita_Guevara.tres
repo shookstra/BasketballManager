@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_2qoje"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_61pn7"]
+
+[sub_resource type="Resource" id="Resource_tqdt8"]
+script = ExtResource("2_61pn7")
+strength = 29
+agility = 85
+endurance = 89
+intelligence = 45
+charisma = 58
+
+[resource]
+script = ExtResource("1_2qoje")
+first_name = "Margarita"
+last_name = "Guevara"
+stats = SubResource("Resource_tqdt8")
+position = "Forward"
+age = 21

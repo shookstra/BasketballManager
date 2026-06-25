@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_t3v44"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_i367a"]
+
+[sub_resource type="Resource" id="Resource_jctt1"]
+script = ExtResource("2_i367a")
+strength = 44
+agility = 47
+endurance = 85
+intelligence = 54
+charisma = 23
+
+[resource]
+script = ExtResource("1_t3v44")
+first_name = "Nash"
+last_name = "Reilly"
+stats = SubResource("Resource_jctt1")
+position = "Forward"
+age = 21

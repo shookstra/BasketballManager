@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_6isy5"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_idkno"]
+
+[sub_resource type="Resource" id="Resource_400ni"]
+script = ExtResource("2_idkno")
+strength = 46
+agility = 96
+endurance = 56
+intelligence = 41
+charisma = 31
+
+[resource]
+script = ExtResource("1_6isy5")
+first_name = "Stella"
+last_name = "Parrish"
+stats = SubResource("Resource_400ni")
+position = "Forward"
+age = 21

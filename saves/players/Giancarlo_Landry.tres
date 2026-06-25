@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_kub73"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_5nt77"]
+
+[sub_resource type="Resource" id="Resource_us7tc"]
+script = ExtResource("2_5nt77")
+strength = 48
+agility = 43
+endurance = 71
+intelligence = 61
+charisma = 47
+
+[resource]
+script = ExtResource("1_kub73")
+first_name = "Giancarlo"
+last_name = "Landry"
+stats = SubResource("Resource_us7tc")
+position = "Forward"
+age = 21

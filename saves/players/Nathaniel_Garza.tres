@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_fea5o"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_5psig"]
+
+[sub_resource type="Resource" id="Resource_rv605"]
+script = ExtResource("2_5psig")
+strength = 69
+agility = 53
+endurance = 70
+intelligence = 87
+charisma = 44
+
+[resource]
+script = ExtResource("1_fea5o")
+first_name = "Nathaniel"
+last_name = "Garza"
+stats = SubResource("Resource_rv605")
+position = "Forward"
+age = 21

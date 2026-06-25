@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_8nm4o"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_syrlt"]
+
+[sub_resource type="Resource" id="Resource_gkmd6"]
+script = ExtResource("2_syrlt")
+strength = 26
+agility = 89
+endurance = 62
+intelligence = 46
+charisma = 82
+
+[resource]
+script = ExtResource("1_8nm4o")
+first_name = "Gaven"
+last_name = "Bowen"
+stats = SubResource("Resource_gkmd6")
+position = "Forward"
+age = 21

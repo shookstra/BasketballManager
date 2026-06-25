@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_nevtw"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_qwyy0"]
+
+[sub_resource type="Resource" id="Resource_uaigp"]
+script = ExtResource("2_qwyy0")
+strength = 99
+agility = 71
+endurance = 54
+intelligence = 43
+charisma = 87
+
+[resource]
+script = ExtResource("1_nevtw")
+first_name = "Nicolas"
+last_name = "Miles"
+stats = SubResource("Resource_uaigp")
+position = "Forward"
+age = 21

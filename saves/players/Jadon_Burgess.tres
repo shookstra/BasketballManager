@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_7nmhi"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_nq7mo"]
+
+[sub_resource type="Resource" id="Resource_uf54v"]
+script = ExtResource("2_nq7mo")
+strength = 77
+agility = 74
+endurance = 88
+intelligence = 79
+charisma = 72
+
+[resource]
+script = ExtResource("1_7nmhi")
+first_name = "Jadon"
+last_name = "Burgess"
+stats = SubResource("Resource_uf54v")
+position = "Forward"
+age = 21

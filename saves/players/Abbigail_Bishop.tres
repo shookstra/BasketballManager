@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3 uid="uid://vi7nf5j47jbt"]
+
+[ext_resource type="Script" uid="uid://byqsytdha5nbd" path="res://resources/player.gd" id="1_mrpj4"]
+[ext_resource type="Script" uid="uid://cgpl1y6eqpkyx" path="res://resources/stats.gd" id="2_3oobm"]
+
+[sub_resource type="Resource" id="Resource_hd8f8"]
+script = ExtResource("2_3oobm")
+strength = 100
+agility = 87
+endurance = 95
+intelligence = 43
+charisma = 64
+
+[resource]
+script = ExtResource("1_mrpj4")
+first_name = "Abbigail"
+last_name = "Bishop"
+stats = SubResource("Resource_hd8f8")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_k4pyn"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_kwkrn"]
+
+[sub_resource type="Resource" id="Resource_suvy3"]
+script = ExtResource("2_kwkrn")
+strength = 98
+agility = 75
+endurance = 78
+intelligence = 83
+charisma = 62
+
+[resource]
+script = ExtResource("1_k4pyn")
+first_name = "Kaya"
+last_name = "Guevara"
+stats = SubResource("Resource_suvy3")
+position = "Forward"
+age = 21

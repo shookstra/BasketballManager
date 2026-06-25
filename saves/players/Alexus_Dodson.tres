@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_srrtj"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_cvnyo"]
+
+[sub_resource type="Resource" id="Resource_x2vp5"]
+script = ExtResource("2_cvnyo")
+strength = 38
+agility = 48
+endurance = 99
+intelligence = 64
+charisma = 97
+
+[resource]
+script = ExtResource("1_srrtj")
+first_name = "Alexus"
+last_name = "Dodson"
+stats = SubResource("Resource_x2vp5")
+position = "Forward"
+age = 21

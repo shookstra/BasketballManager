@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_kiedt"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_n2mb3"]
+
+[sub_resource type="Resource" id="Resource_pwfyj"]
+script = ExtResource("2_n2mb3")
+strength = 27
+agility = 82
+endurance = 76
+intelligence = 68
+charisma = 96
+
+[resource]
+script = ExtResource("1_kiedt")
+first_name = "Rosemary"
+last_name = "Sanford"
+stats = SubResource("Resource_pwfyj")
+position = "Forward"
+age = 21

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_hv3v0"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_i5ox2"]
+
+[sub_resource type="Resource" id="Resource_kbjtp"]
+script = ExtResource("2_i5ox2")
+strength = 51
+agility = 42
+endurance = 90
+intelligence = 60
+charisma = 30
+
+[resource]
+script = ExtResource("1_hv3v0")
+first_name = "Tristen"
+last_name = "Santiago"
+stats = SubResource("Resource_kbjtp")
+position = "Forward"
+age = 21

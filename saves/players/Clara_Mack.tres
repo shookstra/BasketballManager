@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_p224i"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_vfrsr"]
+
+[sub_resource type="Resource" id="Resource_s15or"]
+script = ExtResource("2_vfrsr")
+strength = 84
+agility = 54
+endurance = 61
+intelligence = 52
+charisma = 51
+
+[resource]
+script = ExtResource("1_p224i")
+first_name = "Clara"
+last_name = "Mack"
+stats = SubResource("Resource_s15or")
+position = "Forward"
+age = 21

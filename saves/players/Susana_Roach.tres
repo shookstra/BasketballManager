@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_7pfm7"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_wmjfa"]
+
+[sub_resource type="Resource" id="Resource_b55ip"]
+script = ExtResource("2_wmjfa")
+strength = 77
+agility = 92
+endurance = 88
+intelligence = 53
+charisma = 98
+
+[resource]
+script = ExtResource("1_7pfm7")
+first_name = "Susana"
+last_name = "Roach"
+stats = SubResource("Resource_b55ip")
+position = "Forward"
+age = 21

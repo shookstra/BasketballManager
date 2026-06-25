@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_apgif"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_og8cr"]
+
+[sub_resource type="Resource" id="Resource_5d53t"]
+script = ExtResource("2_og8cr")
+strength = 88
+agility = 76
+endurance = 100
+intelligence = 87
+charisma = 52
+
+[resource]
+script = ExtResource("1_apgif")
+first_name = "Miranda"
+last_name = "Reynolds"
+stats = SubResource("Resource_5d53t")
+position = "Forward"
+age = 21

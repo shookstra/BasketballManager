@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_140lv"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_sgjlh"]
+
+[sub_resource type="Resource" id="Resource_v4jdt"]
+script = ExtResource("2_sgjlh")
+strength = 73
+agility = 56
+endurance = 73
+intelligence = 55
+charisma = 93
+
+[resource]
+script = ExtResource("1_140lv")
+first_name = "Jessie"
+last_name = "Mcguire"
+stats = SubResource("Resource_v4jdt")
+position = "Forward"
+age = 21

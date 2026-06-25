@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_sw6ak"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_jik7k"]
+
+[sub_resource type="Resource" id="Resource_67r02"]
+script = ExtResource("2_jik7k")
+strength = 28
+agility = 70
+endurance = 70
+intelligence = 98
+charisma = 11
+
+[resource]
+script = ExtResource("1_sw6ak")
+first_name = "Frances"
+last_name = "Gonzales"
+stats = SubResource("Resource_67r02")
+position = "Forward"
+age = 21

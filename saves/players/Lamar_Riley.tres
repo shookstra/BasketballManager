@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_6ojcr"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_6bt4n"]
+
+[sub_resource type="Resource" id="Resource_lnt52"]
+script = ExtResource("2_6bt4n")
+strength = 63
+agility = 85
+endurance = 63
+intelligence = 43
+charisma = 82
+
+[resource]
+script = ExtResource("1_6ojcr")
+first_name = "Lamar"
+last_name = "Riley"
+stats = SubResource("Resource_lnt52")
+position = "Forward"
+age = 21

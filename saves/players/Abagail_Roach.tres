@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3 uid="uid://b8u3w1jv30q46"]
+
+[ext_resource type="Script" uid="uid://byqsytdha5nbd" path="res://resources/player.gd" id="1_n6gys"]
+[ext_resource type="Script" uid="uid://cgpl1y6eqpkyx" path="res://resources/stats.gd" id="2_iufho"]
+
+[sub_resource type="Resource" id="Resource_nu6in"]
+script = ExtResource("2_iufho")
+strength = 22
+agility = 84
+endurance = 60
+intelligence = 64
+charisma = 90
+
+[resource]
+script = ExtResource("1_n6gys")
+first_name = "Abagail"
+last_name = "Roach"
+stats = SubResource("Resource_nu6in")
+position = "Forward"
+age = 21

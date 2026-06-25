@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_i3mbu"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_5fc8r"]
+
+[sub_resource type="Resource" id="Resource_2kxky"]
+script = ExtResource("2_5fc8r")
+strength = 90
+agility = 89
+endurance = 81
+intelligence = 81
+charisma = 31
+
+[resource]
+script = ExtResource("1_i3mbu")
+first_name = "Kai"
+last_name = "Morrow"
+stats = SubResource("Resource_2kxky")
+position = "Forward"
+age = 21

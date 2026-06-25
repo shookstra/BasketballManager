@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_jk711"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_bexea"]
+
+[sub_resource type="Resource" id="Resource_w73rg"]
+script = ExtResource("2_bexea")
+strength = 48
+agility = 76
+endurance = 75
+intelligence = 87
+charisma = 68
+
+[resource]
+script = ExtResource("1_jk711")
+first_name = "Michael"
+last_name = "Grant"
+stats = SubResource("Resource_w73rg")
+position = "Forward"
+age = 21

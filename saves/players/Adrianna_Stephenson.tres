@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_vbmun"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_bbb5f"]
+
+[sub_resource type="Resource" id="Resource_mfii2"]
+script = ExtResource("2_bbb5f")
+strength = 60
+agility = 43
+endurance = 83
+intelligence = 86
+charisma = 16
+
+[resource]
+script = ExtResource("1_vbmun")
+first_name = "Adrianna"
+last_name = "Stephenson"
+stats = SubResource("Resource_mfii2")
+position = "Forward"
+age = 21

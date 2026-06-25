@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_aoffu"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_o4gtm"]
+
+[sub_resource type="Resource" id="Resource_etm5b"]
+script = ExtResource("2_o4gtm")
+strength = 32
+agility = 56
+endurance = 97
+intelligence = 85
+charisma = 29
+
+[resource]
+script = ExtResource("1_aoffu")
+first_name = "Jimmy"
+last_name = "Osborne"
+stats = SubResource("Resource_etm5b")
+position = "Forward"
+age = 21

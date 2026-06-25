@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_lwpkc"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_filgc"]
+
+[sub_resource type="Resource" id="Resource_roy51"]
+script = ExtResource("2_filgc")
+strength = 40
+agility = 83
+endurance = 64
+intelligence = 75
+charisma = 97
+
+[resource]
+script = ExtResource("1_lwpkc")
+first_name = "Dallin"
+last_name = "Stein"
+stats = SubResource("Resource_roy51")
+position = "Forward"
+age = 21

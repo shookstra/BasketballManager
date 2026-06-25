@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_kpfc2"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_1yavp"]
+
+[sub_resource type="Resource" id="Resource_jbpy8"]
+script = ExtResource("2_1yavp")
+strength = 75
+agility = 94
+endurance = 62
+intelligence = 89
+charisma = 100
+
+[resource]
+script = ExtResource("1_kpfc2")
+first_name = "Katlynn"
+last_name = "Guzman"
+stats = SubResource("Resource_jbpy8")
+position = "Forward"
+age = 21

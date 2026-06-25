@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_d0q7i"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_h6wfu"]
+
+[sub_resource type="Resource" id="Resource_wqaby"]
+script = ExtResource("2_h6wfu")
+strength = 24
+agility = 91
+endurance = 76
+intelligence = 88
+charisma = 63
+
+[resource]
+script = ExtResource("1_d0q7i")
+first_name = "Shayna"
+last_name = "Contreras"
+stats = SubResource("Resource_wqaby")
+position = "Forward"
+age = 21

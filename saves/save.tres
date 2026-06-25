@@ -1,0 +1,1752 @@
+[gd_resource type="Resource" script_class="SaveGameAsResource" format=3]
+
+[ext_resource type="Script" path="res://resources/team.gd" id="1_qdagp"]
+[ext_resource type="Script" path="res://resources/draft_pick.gd" id="2_48fnd"]
+[ext_resource type="Script" path="res://resources/draft.gd" id="3_4vcev"]
+[ext_resource type="Script" path="res://resources/league.gd" id="4_ajkkj"]
+[ext_resource type="Script" path="res://resources/player.gd" id="5_uxb00"]
+[ext_resource type="Script" path="res://resources/save_game_as_resource.gd" id="6_c7sdp"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="7_wua41"]
+
+[sub_resource type="Resource" id="Resource_eelq8"]
+script = ExtResource("1_qdagp")
+name = "Default Name"
+city = "Default City"
+
+[sub_resource type="Resource" id="Resource_sgv4b"]
+script = ExtResource("1_qdagp")
+name = "Default Name"
+city = "Default City"
+
+[sub_resource type="Resource" id="Resource_vhtgi"]
+script = ExtResource("7_wua41")
+strength = 41
+agility = 88
+endurance = 72
+intelligence = 68
+charisma = 41
+
+[sub_resource type="Resource" id="Resource_b3yci"]
+script = ExtResource("5_uxb00")
+first_name = "Alexzander"
+last_name = "Case"
+stats = SubResource("Resource_vhtgi")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_acojy"]
+script = ExtResource("7_wua41")
+strength = 22
+agility = 45
+endurance = 95
+intelligence = 70
+charisma = 27
+
+[sub_resource type="Resource" id="Resource_1f7yx"]
+script = ExtResource("5_uxb00")
+first_name = "Dexter"
+last_name = "Caldwell"
+stats = SubResource("Resource_acojy")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_c7sdp"]
+script = ExtResource("1_qdagp")
+name = "Sowers"
+players = [SubResource("Resource_b3yci"), SubResource("Resource_1f7yx")]
+city = "Lincoln"
+
+[sub_resource type="Resource" id="Resource_l3f74"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_c7sdp")
+player = SubResource("Resource_b3yci")
+
+[sub_resource type="Resource" id="Resource_kspw3"]
+script = ExtResource("7_wua41")
+strength = 85
+agility = 85
+endurance = 99
+intelligence = 77
+charisma = 81
+
+[sub_resource type="Resource" id="Resource_vojuv"]
+script = ExtResource("5_uxb00")
+first_name = "Shayna"
+last_name = "Page"
+stats = SubResource("Resource_kspw3")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_r0gi7"]
+script = ExtResource("7_wua41")
+strength = 81
+agility = 99
+endurance = 84
+intelligence = 64
+charisma = 77
+
+[sub_resource type="Resource" id="Resource_t475e"]
+script = ExtResource("5_uxb00")
+first_name = "Marlene"
+last_name = "Proctor"
+stats = SubResource("Resource_r0gi7")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_qdagp"]
+script = ExtResource("1_qdagp")
+name = "Raptors"
+players = [SubResource("Resource_vojuv"), SubResource("Resource_t475e")]
+city = "Dunedin"
+
+[sub_resource type="Resource" id="Resource_mync2"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_qdagp")
+player = SubResource("Resource_vojuv")
+pick_number = 2
+
+[sub_resource type="Resource" id="Resource_wmbbu"]
+script = ExtResource("7_wua41")
+strength = 79
+agility = 86
+endurance = 89
+intelligence = 70
+charisma = 98
+
+[sub_resource type="Resource" id="Resource_0kr7a"]
+script = ExtResource("5_uxb00")
+first_name = "Kelly"
+last_name = "Mccoy"
+stats = SubResource("Resource_wmbbu")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_l6idk"]
+script = ExtResource("7_wua41")
+strength = 49
+agility = 99
+endurance = 98
+intelligence = 67
+charisma = 95
+
+[sub_resource type="Resource" id="Resource_7e7kn"]
+script = ExtResource("5_uxb00")
+first_name = "Connor"
+last_name = "Owen"
+stats = SubResource("Resource_l6idk")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_48fnd"]
+script = ExtResource("1_qdagp")
+name = "Galactics"
+players = [SubResource("Resource_0kr7a"), SubResource("Resource_7e7kn")]
+city = "Dunedin"
+
+[sub_resource type="Resource" id="Resource_y5sm2"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_48fnd")
+player = SubResource("Resource_0kr7a")
+pick_number = 3
+
+[sub_resource type="Resource" id="Resource_t3idv"]
+script = ExtResource("7_wua41")
+strength = 94
+agility = 76
+endurance = 76
+intelligence = 90
+charisma = 87
+
+[sub_resource type="Resource" id="Resource_7wvrb"]
+script = ExtResource("5_uxb00")
+first_name = "Benjamin"
+last_name = "Martinez"
+stats = SubResource("Resource_t3idv")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_kpcin"]
+script = ExtResource("7_wua41")
+strength = 66
+agility = 98
+endurance = 80
+intelligence = 64
+charisma = 91
+
+[sub_resource type="Resource" id="Resource_aji3a"]
+script = ExtResource("5_uxb00")
+first_name = "Chelsea"
+last_name = "Chen"
+stats = SubResource("Resource_kpcin")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_4vcev"]
+script = ExtResource("1_qdagp")
+name = "Crushers"
+players = [SubResource("Resource_7wvrb"), SubResource("Resource_aji3a")]
+city = "Laurel"
+
+[sub_resource type="Resource" id="Resource_jmuy7"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_4vcev")
+player = SubResource("Resource_7wvrb")
+pick_number = 4
+
+[sub_resource type="Resource" id="Resource_ay7kf"]
+script = ExtResource("7_wua41")
+strength = 70
+agility = 53
+endurance = 97
+intelligence = 93
+charisma = 100
+
+[sub_resource type="Resource" id="Resource_68icj"]
+script = ExtResource("5_uxb00")
+first_name = "Brenda"
+last_name = "Stokes"
+stats = SubResource("Resource_ay7kf")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_lb1kh"]
+script = ExtResource("7_wua41")
+strength = 48
+agility = 83
+endurance = 64
+intelligence = 100
+charisma = 99
+
+[sub_resource type="Resource" id="Resource_8v325"]
+script = ExtResource("5_uxb00")
+first_name = "Jacklyn"
+last_name = "Rosales"
+stats = SubResource("Resource_lb1kh")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ajkkj"]
+script = ExtResource("1_qdagp")
+name = "Cruisers"
+players = [SubResource("Resource_68icj"), SubResource("Resource_8v325")]
+city = "Duluth"
+
+[sub_resource type="Resource" id="Resource_0xhg6"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_ajkkj")
+player = SubResource("Resource_68icj")
+pick_number = 5
+
+[sub_resource type="Resource" id="Resource_ihpvv"]
+script = ExtResource("7_wua41")
+strength = 71
+agility = 91
+endurance = 76
+intelligence = 100
+charisma = 76
+
+[sub_resource type="Resource" id="Resource_strb7"]
+script = ExtResource("5_uxb00")
+first_name = "Christa"
+last_name = "Watts"
+stats = SubResource("Resource_ihpvv")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_xs0tt"]
+script = ExtResource("7_wua41")
+strength = 82
+agility = 55
+endurance = 92
+intelligence = 86
+charisma = 78
+
+[sub_resource type="Resource" id="Resource_3r174"]
+script = ExtResource("5_uxb00")
+first_name = "Brice"
+last_name = "Zimmerman"
+stats = SubResource("Resource_xs0tt")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_uxb00"]
+script = ExtResource("1_qdagp")
+name = "Galactics"
+players = [SubResource("Resource_strb7"), SubResource("Resource_3r174")]
+city = "Duluth"
+
+[sub_resource type="Resource" id="Resource_mxp6r"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_uxb00")
+player = SubResource("Resource_strb7")
+pick_number = 6
+
+[sub_resource type="Resource" id="Resource_5w47v"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_c7sdp")
+player = SubResource("Resource_1f7yx")
+round_number = 2
+
+[sub_resource type="Resource" id="Resource_nigw2"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_qdagp")
+player = SubResource("Resource_t475e")
+round_number = 2
+pick_number = 2
+
+[sub_resource type="Resource" id="Resource_qf6qq"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_48fnd")
+player = SubResource("Resource_7e7kn")
+round_number = 2
+pick_number = 3
+
+[sub_resource type="Resource" id="Resource_du64m"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_4vcev")
+player = SubResource("Resource_aji3a")
+round_number = 2
+pick_number = 4
+
+[sub_resource type="Resource" id="Resource_2sa44"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_ajkkj")
+player = SubResource("Resource_8v325")
+round_number = 2
+pick_number = 5
+
+[sub_resource type="Resource" id="Resource_3wwdq"]
+script = ExtResource("2_48fnd")
+team = SubResource("Resource_uxb00")
+player = SubResource("Resource_3r174")
+round_number = 2
+pick_number = 6
+
+[sub_resource type="Resource" id="Resource_2m1bq"]
+script = ExtResource("3_4vcev")
+current_round = 3
+picks = Array[ExtResource("2_48fnd")]([SubResource("Resource_l3f74"), SubResource("Resource_mync2"), SubResource("Resource_y5sm2"), SubResource("Resource_jmuy7"), SubResource("Resource_0xhg6"), SubResource("Resource_mxp6r"), SubResource("Resource_5w47v"), SubResource("Resource_nigw2"), SubResource("Resource_qf6qq"), SubResource("Resource_du64m"), SubResource("Resource_2sa44"), SubResource("Resource_3wwdq")])
+current_team = SubResource("Resource_sgv4b")
+
+[sub_resource type="Resource" id="Resource_wua41"]
+script = ExtResource("4_ajkkj")
+league_name = "PWBL"
+general_manager = "Semmy"
+teams = Array[ExtResource("1_qdagp")]([SubResource("Resource_qdagp"), SubResource("Resource_48fnd"), SubResource("Resource_4vcev"), SubResource("Resource_ajkkj"), SubResource("Resource_uxb00"), SubResource("Resource_c7sdp")])
+
+[sub_resource type="Resource" id="Resource_473nr"]
+script = ExtResource("7_wua41")
+strength = 48
+agility = 50
+endurance = 100
+intelligence = 60
+charisma = 54
+
+[sub_resource type="Resource" id="Resource_t4awg"]
+script = ExtResource("5_uxb00")
+first_name = "India"
+last_name = "Marin"
+stats = SubResource("Resource_473nr")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_dfpco"]
+script = ExtResource("7_wua41")
+strength = 80
+agility = 53
+endurance = 75
+intelligence = 66
+charisma = 45
+
+[sub_resource type="Resource" id="Resource_gmlxd"]
+script = ExtResource("5_uxb00")
+first_name = "Aliza"
+last_name = "Randolph"
+stats = SubResource("Resource_dfpco")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_4fo4n"]
+script = ExtResource("7_wua41")
+strength = 52
+agility = 47
+endurance = 84
+intelligence = 83
+charisma = 62
+
+[sub_resource type="Resource" id="Resource_gwm48"]
+script = ExtResource("5_uxb00")
+first_name = "Yvette"
+last_name = "Guzman"
+stats = SubResource("Resource_4fo4n")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_6e1rx"]
+script = ExtResource("7_wua41")
+strength = 54
+agility = 56
+endurance = 84
+intelligence = 62
+charisma = 67
+
+[sub_resource type="Resource" id="Resource_ufg1v"]
+script = ExtResource("5_uxb00")
+first_name = "Trevon"
+last_name = "Howe"
+stats = SubResource("Resource_6e1rx")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_3yvnl"]
+script = ExtResource("7_wua41")
+strength = 26
+agility = 78
+endurance = 50
+intelligence = 71
+charisma = 80
+
+[sub_resource type="Resource" id="Resource_pj7gu"]
+script = ExtResource("5_uxb00")
+first_name = "Gino"
+last_name = "Taylor"
+stats = SubResource("Resource_3yvnl")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_1y1nk"]
+script = ExtResource("7_wua41")
+strength = 36
+agility = 62
+endurance = 90
+intelligence = 76
+charisma = 81
+
+[sub_resource type="Resource" id="Resource_cncyc"]
+script = ExtResource("5_uxb00")
+first_name = "Nicolette"
+last_name = "Rice"
+stats = SubResource("Resource_1y1nk")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_efyx1"]
+script = ExtResource("7_wua41")
+strength = 89
+agility = 91
+endurance = 66
+intelligence = 57
+charisma = 61
+
+[sub_resource type="Resource" id="Resource_qf1ao"]
+script = ExtResource("5_uxb00")
+first_name = "Imani"
+last_name = "Foley"
+stats = SubResource("Resource_efyx1")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_mt0lb"]
+script = ExtResource("7_wua41")
+strength = 56
+agility = 78
+endurance = 51
+intelligence = 55
+charisma = 14
+
+[sub_resource type="Resource" id="Resource_8rw4a"]
+script = ExtResource("5_uxb00")
+first_name = "Bailey"
+last_name = "Alexander"
+stats = SubResource("Resource_mt0lb")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_u6oh7"]
+script = ExtResource("7_wua41")
+strength = 38
+agility = 100
+endurance = 58
+intelligence = 54
+charisma = 96
+
+[sub_resource type="Resource" id="Resource_jupsi"]
+script = ExtResource("5_uxb00")
+first_name = "Lauren"
+last_name = "Morrison"
+stats = SubResource("Resource_u6oh7")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_xgvjk"]
+script = ExtResource("7_wua41")
+strength = 78
+agility = 82
+endurance = 67
+intelligence = 41
+charisma = 16
+
+[sub_resource type="Resource" id="Resource_t2hdn"]
+script = ExtResource("5_uxb00")
+first_name = "Lexus"
+last_name = "Roberts"
+stats = SubResource("Resource_xgvjk")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_74mta"]
+script = ExtResource("7_wua41")
+strength = 55
+agility = 71
+endurance = 80
+intelligence = 63
+charisma = 41
+
+[sub_resource type="Resource" id="Resource_ouvhu"]
+script = ExtResource("5_uxb00")
+first_name = "Claire"
+last_name = "House"
+stats = SubResource("Resource_74mta")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_vj0k5"]
+script = ExtResource("7_wua41")
+strength = 38
+agility = 54
+endurance = 69
+intelligence = 71
+charisma = 95
+
+[sub_resource type="Resource" id="Resource_jsyrb"]
+script = ExtResource("5_uxb00")
+first_name = "Ayden"
+last_name = "Castillo"
+stats = SubResource("Resource_vj0k5")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_66pjf"]
+script = ExtResource("7_wua41")
+strength = 52
+agility = 100
+endurance = 80
+intelligence = 100
+charisma = 37
+
+[sub_resource type="Resource" id="Resource_56odo"]
+script = ExtResource("5_uxb00")
+first_name = "Morgan"
+last_name = "Xiong"
+stats = SubResource("Resource_66pjf")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_vahm1"]
+script = ExtResource("7_wua41")
+strength = 40
+agility = 81
+endurance = 70
+intelligence = 55
+charisma = 99
+
+[sub_resource type="Resource" id="Resource_y7xdc"]
+script = ExtResource("5_uxb00")
+first_name = "Conner"
+last_name = "Phelps"
+stats = SubResource("Resource_vahm1")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_au4au"]
+script = ExtResource("7_wua41")
+strength = 24
+agility = 53
+endurance = 54
+intelligence = 81
+charisma = 12
+
+[sub_resource type="Resource" id="Resource_rhwk5"]
+script = ExtResource("5_uxb00")
+first_name = "Ben"
+last_name = "Compton"
+stats = SubResource("Resource_au4au")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_q6wli"]
+script = ExtResource("7_wua41")
+strength = 35
+agility = 85
+endurance = 69
+intelligence = 47
+charisma = 53
+
+[sub_resource type="Resource" id="Resource_s3rag"]
+script = ExtResource("5_uxb00")
+first_name = "Lane"
+last_name = "Atkins"
+stats = SubResource("Resource_q6wli")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ppu8r"]
+script = ExtResource("7_wua41")
+strength = 31
+agility = 55
+endurance = 60
+intelligence = 77
+charisma = 15
+
+[sub_resource type="Resource" id="Resource_dn4vl"]
+script = ExtResource("5_uxb00")
+first_name = "Aron"
+last_name = "English"
+stats = SubResource("Resource_ppu8r")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_7doy3"]
+script = ExtResource("7_wua41")
+strength = 76
+agility = 87
+endurance = 56
+intelligence = 92
+charisma = 21
+
+[sub_resource type="Resource" id="Resource_opcgf"]
+script = ExtResource("5_uxb00")
+first_name = "Stone"
+last_name = "Adams"
+stats = SubResource("Resource_7doy3")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_v0lx8"]
+script = ExtResource("7_wua41")
+strength = 63
+agility = 69
+endurance = 97
+intelligence = 85
+charisma = 20
+
+[sub_resource type="Resource" id="Resource_jl6y3"]
+script = ExtResource("5_uxb00")
+first_name = "Aubree"
+last_name = "Hardin"
+stats = SubResource("Resource_v0lx8")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_kqbxm"]
+script = ExtResource("7_wua41")
+strength = 65
+agility = 44
+endurance = 91
+intelligence = 70
+charisma = 18
+
+[sub_resource type="Resource" id="Resource_24n2p"]
+script = ExtResource("5_uxb00")
+first_name = "Alessandro"
+last_name = "Bradford"
+stats = SubResource("Resource_kqbxm")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_76p2x"]
+script = ExtResource("7_wua41")
+strength = 55
+agility = 57
+endurance = 73
+intelligence = 64
+charisma = 27
+
+[sub_resource type="Resource" id="Resource_f0ww5"]
+script = ExtResource("5_uxb00")
+first_name = "Shayna"
+last_name = "Morales"
+stats = SubResource("Resource_76p2x")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_mi6ut"]
+script = ExtResource("7_wua41")
+strength = 42
+agility = 55
+endurance = 78
+intelligence = 66
+charisma = 98
+
+[sub_resource type="Resource" id="Resource_5v5xy"]
+script = ExtResource("5_uxb00")
+first_name = "Simon"
+last_name = "Espinosa"
+stats = SubResource("Resource_mi6ut")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_cydxa"]
+script = ExtResource("7_wua41")
+strength = 37
+agility = 73
+endurance = 68
+intelligence = 76
+charisma = 41
+
+[sub_resource type="Resource" id="Resource_iiagr"]
+script = ExtResource("5_uxb00")
+first_name = "Nikhil"
+last_name = "Flores"
+stats = SubResource("Resource_cydxa")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_h2sxp"]
+script = ExtResource("7_wua41")
+strength = 91
+agility = 55
+endurance = 79
+intelligence = 82
+charisma = 24
+
+[sub_resource type="Resource" id="Resource_njj8b"]
+script = ExtResource("5_uxb00")
+first_name = "Jessie"
+last_name = "Huynh"
+stats = SubResource("Resource_h2sxp")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_mfo6k"]
+script = ExtResource("7_wua41")
+strength = 81
+agility = 58
+endurance = 84
+intelligence = 58
+charisma = 35
+
+[sub_resource type="Resource" id="Resource_kjuem"]
+script = ExtResource("5_uxb00")
+first_name = "Kayla"
+last_name = "Wallace"
+stats = SubResource("Resource_mfo6k")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_am2ib"]
+script = ExtResource("7_wua41")
+strength = 52
+agility = 71
+endurance = 56
+intelligence = 95
+charisma = 39
+
+[sub_resource type="Resource" id="Resource_y5cid"]
+script = ExtResource("5_uxb00")
+first_name = "Cheyenne"
+last_name = "Allen"
+stats = SubResource("Resource_am2ib")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_v071g"]
+script = ExtResource("7_wua41")
+strength = 30
+agility = 90
+endurance = 77
+intelligence = 51
+charisma = 62
+
+[sub_resource type="Resource" id="Resource_tjro6"]
+script = ExtResource("5_uxb00")
+first_name = "Rasheed"
+last_name = "Lyons"
+stats = SubResource("Resource_v071g")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_chuho"]
+script = ExtResource("7_wua41")
+strength = 85
+agility = 46
+endurance = 97
+intelligence = 63
+charisma = 54
+
+[sub_resource type="Resource" id="Resource_qimx8"]
+script = ExtResource("5_uxb00")
+first_name = "Kaylin"
+last_name = "Kerr"
+stats = SubResource("Resource_chuho")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_h1jm6"]
+script = ExtResource("7_wua41")
+strength = 59
+agility = 90
+endurance = 68
+intelligence = 79
+charisma = 20
+
+[sub_resource type="Resource" id="Resource_6gjlx"]
+script = ExtResource("5_uxb00")
+first_name = "Jose"
+last_name = "Moss"
+stats = SubResource("Resource_h1jm6")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ue4yc"]
+script = ExtResource("7_wua41")
+strength = 73
+agility = 68
+endurance = 63
+intelligence = 80
+charisma = 81
+
+[sub_resource type="Resource" id="Resource_kw2o2"]
+script = ExtResource("5_uxb00")
+first_name = "Lizeth"
+last_name = "Valenzuela"
+stats = SubResource("Resource_ue4yc")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_h8gie"]
+script = ExtResource("7_wua41")
+strength = 20
+agility = 64
+endurance = 51
+intelligence = 67
+charisma = 17
+
+[sub_resource type="Resource" id="Resource_76heo"]
+script = ExtResource("5_uxb00")
+first_name = "Jayden"
+last_name = "Benjamin"
+stats = SubResource("Resource_h8gie")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_cly6k"]
+script = ExtResource("7_wua41")
+strength = 22
+agility = 78
+endurance = 70
+intelligence = 84
+charisma = 60
+
+[sub_resource type="Resource" id="Resource_cm3ge"]
+script = ExtResource("5_uxb00")
+first_name = "Devon"
+last_name = "Caldwell"
+stats = SubResource("Resource_cly6k")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ol3tr"]
+script = ExtResource("7_wua41")
+strength = 96
+agility = 65
+endurance = 54
+intelligence = 44
+charisma = 38
+
+[sub_resource type="Resource" id="Resource_m1kar"]
+script = ExtResource("5_uxb00")
+first_name = "Kade"
+last_name = "Nash"
+stats = SubResource("Resource_ol3tr")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_uu7r8"]
+script = ExtResource("7_wua41")
+strength = 80
+agility = 45
+endurance = 99
+intelligence = 100
+charisma = 45
+
+[sub_resource type="Resource" id="Resource_dox2m"]
+script = ExtResource("5_uxb00")
+first_name = "Julianna"
+last_name = "Grimes"
+stats = SubResource("Resource_uu7r8")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_wk3jr"]
+script = ExtResource("7_wua41")
+strength = 69
+agility = 95
+endurance = 72
+intelligence = 50
+charisma = 99
+
+[sub_resource type="Resource" id="Resource_h7nnd"]
+script = ExtResource("5_uxb00")
+first_name = "Nicole"
+last_name = "Castillo"
+stats = SubResource("Resource_wk3jr")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_i7avo"]
+script = ExtResource("7_wua41")
+strength = 94
+agility = 49
+endurance = 54
+intelligence = 59
+charisma = 26
+
+[sub_resource type="Resource" id="Resource_fooaa"]
+script = ExtResource("5_uxb00")
+first_name = "Aracely"
+last_name = "Williams"
+stats = SubResource("Resource_i7avo")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_mdn2a"]
+script = ExtResource("7_wua41")
+strength = 93
+agility = 51
+endurance = 100
+intelligence = 47
+charisma = 93
+
+[sub_resource type="Resource" id="Resource_w7qht"]
+script = ExtResource("5_uxb00")
+first_name = "Sergio"
+last_name = "James"
+stats = SubResource("Resource_mdn2a")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_54snk"]
+script = ExtResource("7_wua41")
+strength = 50
+agility = 100
+endurance = 79
+intelligence = 45
+charisma = 18
+
+[sub_resource type="Resource" id="Resource_uhjvd"]
+script = ExtResource("5_uxb00")
+first_name = "Maggie"
+last_name = "Scott"
+stats = SubResource("Resource_54snk")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ppm8n"]
+script = ExtResource("7_wua41")
+strength = 85
+agility = 47
+endurance = 83
+intelligence = 87
+charisma = 48
+
+[sub_resource type="Resource" id="Resource_0aeap"]
+script = ExtResource("5_uxb00")
+first_name = "Amara"
+last_name = "Figueroa"
+stats = SubResource("Resource_ppm8n")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_fekny"]
+script = ExtResource("7_wua41")
+strength = 53
+agility = 69
+endurance = 59
+intelligence = 41
+charisma = 74
+
+[sub_resource type="Resource" id="Resource_7nhem"]
+script = ExtResource("5_uxb00")
+first_name = "Carlie"
+last_name = "Fields"
+stats = SubResource("Resource_fekny")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_dyrka"]
+script = ExtResource("7_wua41")
+strength = 59
+agility = 41
+endurance = 69
+intelligence = 90
+charisma = 66
+
+[sub_resource type="Resource" id="Resource_v274r"]
+script = ExtResource("5_uxb00")
+first_name = "Heath"
+last_name = "Cherry"
+stats = SubResource("Resource_dyrka")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_hcigl"]
+script = ExtResource("7_wua41")
+strength = 49
+agility = 64
+endurance = 76
+intelligence = 97
+charisma = 20
+
+[sub_resource type="Resource" id="Resource_5m3no"]
+script = ExtResource("5_uxb00")
+first_name = "Gisselle"
+last_name = "Jackson"
+stats = SubResource("Resource_hcigl")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_p7obs"]
+script = ExtResource("7_wua41")
+strength = 20
+agility = 74
+endurance = 85
+intelligence = 89
+charisma = 12
+
+[sub_resource type="Resource" id="Resource_mggf6"]
+script = ExtResource("5_uxb00")
+first_name = "Paxton"
+last_name = "Booker"
+stats = SubResource("Resource_p7obs")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_4m5i0"]
+script = ExtResource("7_wua41")
+strength = 75
+agility = 62
+endurance = 55
+intelligence = 59
+charisma = 57
+
+[sub_resource type="Resource" id="Resource_8a15h"]
+script = ExtResource("5_uxb00")
+first_name = "Abby"
+last_name = "Schneider"
+stats = SubResource("Resource_4m5i0")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_5r6uh"]
+script = ExtResource("7_wua41")
+strength = 98
+agility = 56
+endurance = 71
+intelligence = 99
+charisma = 11
+
+[sub_resource type="Resource" id="Resource_424j7"]
+script = ExtResource("5_uxb00")
+first_name = "Eliana"
+last_name = "Harding"
+stats = SubResource("Resource_5r6uh")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_wvw11"]
+script = ExtResource("7_wua41")
+strength = 34
+agility = 60
+endurance = 76
+intelligence = 60
+charisma = 77
+
+[sub_resource type="Resource" id="Resource_fon7v"]
+script = ExtResource("5_uxb00")
+first_name = "Shakira"
+last_name = "Stafford"
+stats = SubResource("Resource_wvw11")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_dkv6g"]
+script = ExtResource("7_wua41")
+strength = 68
+agility = 51
+endurance = 100
+intelligence = 48
+charisma = 14
+
+[sub_resource type="Resource" id="Resource_hkfjp"]
+script = ExtResource("5_uxb00")
+first_name = "Zechariah"
+last_name = "Carlson"
+stats = SubResource("Resource_dkv6g")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ls6su"]
+script = ExtResource("7_wua41")
+strength = 69
+agility = 68
+endurance = 71
+intelligence = 50
+charisma = 58
+
+[sub_resource type="Resource" id="Resource_8k1bm"]
+script = ExtResource("5_uxb00")
+first_name = "Gloria"
+last_name = "Dominguez"
+stats = SubResource("Resource_ls6su")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_5smou"]
+script = ExtResource("7_wua41")
+strength = 82
+agility = 77
+endurance = 84
+intelligence = 84
+charisma = 29
+
+[sub_resource type="Resource" id="Resource_0iens"]
+script = ExtResource("5_uxb00")
+first_name = "Abigale"
+last_name = "Willis"
+stats = SubResource("Resource_5smou")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_qfltj"]
+script = ExtResource("7_wua41")
+strength = 64
+agility = 75
+endurance = 86
+intelligence = 61
+charisma = 85
+
+[sub_resource type="Resource" id="Resource_abgfv"]
+script = ExtResource("5_uxb00")
+first_name = "Curtis"
+last_name = "S"
+stats = SubResource("Resource_qfltj")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_jbywu"]
+script = ExtResource("7_wua41")
+strength = 33
+agility = 48
+endurance = 92
+intelligence = 67
+charisma = 47
+
+[sub_resource type="Resource" id="Resource_rlf1q"]
+script = ExtResource("5_uxb00")
+first_name = "Justine"
+last_name = "Wolfe"
+stats = SubResource("Resource_jbywu")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_asffo"]
+script = ExtResource("7_wua41")
+strength = 41
+agility = 75
+endurance = 65
+intelligence = 92
+charisma = 88
+
+[sub_resource type="Resource" id="Resource_4wc02"]
+script = ExtResource("5_uxb00")
+first_name = "Jude"
+last_name = "Ayers"
+stats = SubResource("Resource_asffo")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_udfs6"]
+script = ExtResource("7_wua41")
+strength = 55
+agility = 40
+endurance = 84
+intelligence = 76
+charisma = 53
+
+[sub_resource type="Resource" id="Resource_ui83v"]
+script = ExtResource("5_uxb00")
+first_name = "Mercedes"
+last_name = "Greer"
+stats = SubResource("Resource_udfs6")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_tcw3o"]
+script = ExtResource("7_wua41")
+strength = 79
+agility = 84
+endurance = 78
+intelligence = 82
+charisma = 54
+
+[sub_resource type="Resource" id="Resource_khxjm"]
+script = ExtResource("5_uxb00")
+first_name = "Carolyn"
+last_name = "Gomez"
+stats = SubResource("Resource_tcw3o")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_yhrjg"]
+script = ExtResource("7_wua41")
+strength = 23
+agility = 69
+endurance = 52
+intelligence = 91
+charisma = 15
+
+[sub_resource type="Resource" id="Resource_7lqqn"]
+script = ExtResource("5_uxb00")
+first_name = "Rylan"
+last_name = "Obrien"
+stats = SubResource("Resource_yhrjg")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_xum6k"]
+script = ExtResource("7_wua41")
+strength = 35
+agility = 71
+endurance = 67
+intelligence = 90
+charisma = 17
+
+[sub_resource type="Resource" id="Resource_ktutl"]
+script = ExtResource("5_uxb00")
+first_name = "Delilah"
+last_name = "Mata"
+stats = SubResource("Resource_xum6k")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_0g60t"]
+script = ExtResource("7_wua41")
+strength = 44
+agility = 66
+endurance = 64
+intelligence = 47
+charisma = 93
+
+[sub_resource type="Resource" id="Resource_hus4o"]
+script = ExtResource("5_uxb00")
+first_name = "Reece"
+last_name = "Villa"
+stats = SubResource("Resource_0g60t")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_lm0d6"]
+script = ExtResource("7_wua41")
+strength = 47
+agility = 88
+endurance = 70
+intelligence = 76
+charisma = 73
+
+[sub_resource type="Resource" id="Resource_irddl"]
+script = ExtResource("5_uxb00")
+first_name = "Jailyn"
+last_name = "Stuart"
+stats = SubResource("Resource_lm0d6")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_yviia"]
+script = ExtResource("7_wua41")
+strength = 63
+agility = 72
+endurance = 88
+intelligence = 71
+charisma = 68
+
+[sub_resource type="Resource" id="Resource_tk62t"]
+script = ExtResource("5_uxb00")
+first_name = "Haley"
+last_name = "Blevins"
+stats = SubResource("Resource_yviia")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_pmdnl"]
+script = ExtResource("7_wua41")
+strength = 39
+agility = 69
+endurance = 95
+intelligence = 100
+charisma = 81
+
+[sub_resource type="Resource" id="Resource_ofdef"]
+script = ExtResource("5_uxb00")
+first_name = "Lizeth"
+last_name = "Mora"
+stats = SubResource("Resource_pmdnl")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_kger8"]
+script = ExtResource("7_wua41")
+strength = 62
+agility = 43
+endurance = 71
+intelligence = 82
+charisma = 92
+
+[sub_resource type="Resource" id="Resource_3cme3"]
+script = ExtResource("5_uxb00")
+first_name = "Nataly"
+last_name = "Barrera"
+stats = SubResource("Resource_kger8")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_h03dm"]
+script = ExtResource("7_wua41")
+strength = 38
+agility = 56
+endurance = 57
+intelligence = 61
+charisma = 34
+
+[sub_resource type="Resource" id="Resource_xw7xy"]
+script = ExtResource("5_uxb00")
+first_name = "Ryder"
+last_name = "Byrd"
+stats = SubResource("Resource_h03dm")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_iyxba"]
+script = ExtResource("7_wua41")
+strength = 34
+agility = 89
+endurance = 91
+intelligence = 43
+charisma = 32
+
+[sub_resource type="Resource" id="Resource_075t1"]
+script = ExtResource("5_uxb00")
+first_name = "Junior"
+last_name = "Harrison"
+stats = SubResource("Resource_iyxba")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_t77d1"]
+script = ExtResource("7_wua41")
+strength = 23
+agility = 96
+endurance = 86
+intelligence = 86
+charisma = 72
+
+[sub_resource type="Resource" id="Resource_p6tea"]
+script = ExtResource("5_uxb00")
+first_name = "Houston"
+last_name = "Pierce"
+stats = SubResource("Resource_t77d1")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_7vokt"]
+script = ExtResource("7_wua41")
+strength = 48
+agility = 63
+endurance = 64
+intelligence = 94
+charisma = 47
+
+[sub_resource type="Resource" id="Resource_rfe6e"]
+script = ExtResource("5_uxb00")
+first_name = "Johnnie"
+last_name = "Contreras"
+stats = SubResource("Resource_7vokt")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_l7ov7"]
+script = ExtResource("7_wua41")
+strength = 99
+agility = 45
+endurance = 92
+intelligence = 94
+charisma = 55
+
+[sub_resource type="Resource" id="Resource_ls0pm"]
+script = ExtResource("5_uxb00")
+first_name = "Kenna"
+last_name = "Villarreal"
+stats = SubResource("Resource_l7ov7")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_vs7pw"]
+script = ExtResource("7_wua41")
+strength = 96
+agility = 72
+endurance = 50
+intelligence = 47
+charisma = 51
+
+[sub_resource type="Resource" id="Resource_0621m"]
+script = ExtResource("5_uxb00")
+first_name = "Rahul"
+last_name = "Gillespie"
+stats = SubResource("Resource_vs7pw")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_akva5"]
+script = ExtResource("7_wua41")
+strength = 81
+agility = 60
+endurance = 94
+intelligence = 43
+charisma = 23
+
+[sub_resource type="Resource" id="Resource_wvcb4"]
+script = ExtResource("5_uxb00")
+first_name = "Casey"
+last_name = "Mccarthy"
+stats = SubResource("Resource_akva5")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_gg0oa"]
+script = ExtResource("7_wua41")
+strength = 28
+agility = 89
+endurance = 81
+intelligence = 88
+charisma = 44
+
+[sub_resource type="Resource" id="Resource_7cerp"]
+script = ExtResource("5_uxb00")
+first_name = "Hailie"
+last_name = "Clay"
+stats = SubResource("Resource_gg0oa")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_q88q4"]
+script = ExtResource("7_wua41")
+strength = 67
+agility = 57
+endurance = 95
+intelligence = 88
+charisma = 30
+
+[sub_resource type="Resource" id="Resource_e37tt"]
+script = ExtResource("5_uxb00")
+first_name = "Brody"
+last_name = "Cabrera"
+stats = SubResource("Resource_q88q4")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_glnb0"]
+script = ExtResource("7_wua41")
+strength = 27
+agility = 73
+endurance = 77
+intelligence = 44
+charisma = 15
+
+[sub_resource type="Resource" id="Resource_m1qh1"]
+script = ExtResource("5_uxb00")
+first_name = "Emanuel"
+last_name = "Yang"
+stats = SubResource("Resource_glnb0")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_onkpv"]
+script = ExtResource("7_wua41")
+strength = 66
+agility = 97
+endurance = 69
+intelligence = 73
+charisma = 19
+
+[sub_resource type="Resource" id="Resource_0nis0"]
+script = ExtResource("5_uxb00")
+first_name = "Elyse"
+last_name = "Bass"
+stats = SubResource("Resource_onkpv")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_tlibp"]
+script = ExtResource("7_wua41")
+strength = 80
+agility = 87
+endurance = 72
+intelligence = 62
+charisma = 71
+
+[sub_resource type="Resource" id="Resource_5gj7i"]
+script = ExtResource("5_uxb00")
+first_name = "Juanita"
+last_name = "Bullock"
+stats = SubResource("Resource_tlibp")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_hvfdl"]
+script = ExtResource("7_wua41")
+strength = 97
+agility = 71
+endurance = 58
+intelligence = 75
+charisma = 84
+
+[sub_resource type="Resource" id="Resource_x7xda"]
+script = ExtResource("5_uxb00")
+first_name = "Daija"
+last_name = "Fletcher"
+stats = SubResource("Resource_hvfdl")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_bjden"]
+script = ExtResource("7_wua41")
+strength = 41
+agility = 60
+endurance = 88
+intelligence = 96
+charisma = 88
+
+[sub_resource type="Resource" id="Resource_11k3j"]
+script = ExtResource("5_uxb00")
+first_name = "Byron"
+last_name = "Kelly"
+stats = SubResource("Resource_bjden")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_me3ty"]
+script = ExtResource("7_wua41")
+strength = 41
+agility = 92
+endurance = 100
+intelligence = 53
+charisma = 90
+
+[sub_resource type="Resource" id="Resource_wwyg2"]
+script = ExtResource("5_uxb00")
+first_name = "Montana"
+last_name = "Martin"
+stats = SubResource("Resource_me3ty")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_v3bbc"]
+script = ExtResource("7_wua41")
+strength = 44
+agility = 56
+endurance = 71
+intelligence = 68
+charisma = 59
+
+[sub_resource type="Resource" id="Resource_l3ynh"]
+script = ExtResource("5_uxb00")
+first_name = "Korey"
+last_name = "Gordon"
+stats = SubResource("Resource_v3bbc")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_j021u"]
+script = ExtResource("7_wua41")
+strength = 63
+agility = 69
+endurance = 52
+intelligence = 88
+charisma = 60
+
+[sub_resource type="Resource" id="Resource_i8e4w"]
+script = ExtResource("5_uxb00")
+first_name = "David"
+last_name = "Bass"
+stats = SubResource("Resource_j021u")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_pap1g"]
+script = ExtResource("7_wua41")
+strength = 33
+agility = 51
+endurance = 93
+intelligence = 57
+charisma = 44
+
+[sub_resource type="Resource" id="Resource_fi8f2"]
+script = ExtResource("5_uxb00")
+first_name = "Layla"
+last_name = "Richards"
+stats = SubResource("Resource_pap1g")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_8hcph"]
+script = ExtResource("7_wua41")
+strength = 38
+agility = 87
+endurance = 75
+intelligence = 75
+charisma = 28
+
+[sub_resource type="Resource" id="Resource_rk26d"]
+script = ExtResource("5_uxb00")
+first_name = "Dejah"
+last_name = "Hart"
+stats = SubResource("Resource_8hcph")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_od8ek"]
+script = ExtResource("7_wua41")
+strength = 86
+agility = 48
+endurance = 74
+intelligence = 79
+charisma = 90
+
+[sub_resource type="Resource" id="Resource_p0eq7"]
+script = ExtResource("5_uxb00")
+first_name = "Elissa"
+last_name = "Gardner"
+stats = SubResource("Resource_od8ek")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_5ixc7"]
+script = ExtResource("7_wua41")
+strength = 92
+agility = 88
+endurance = 51
+intelligence = 45
+charisma = 45
+
+[sub_resource type="Resource" id="Resource_1dy2x"]
+script = ExtResource("5_uxb00")
+first_name = "Gary"
+last_name = "Phan"
+stats = SubResource("Resource_5ixc7")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_woj2d"]
+script = ExtResource("7_wua41")
+strength = 64
+agility = 62
+endurance = 89
+intelligence = 56
+charisma = 53
+
+[sub_resource type="Resource" id="Resource_qb7ff"]
+script = ExtResource("5_uxb00")
+first_name = "Gaige"
+last_name = "Robertson"
+stats = SubResource("Resource_woj2d")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_htjqw"]
+script = ExtResource("7_wua41")
+strength = 49
+agility = 44
+endurance = 69
+intelligence = 94
+charisma = 95
+
+[sub_resource type="Resource" id="Resource_gp4qm"]
+script = ExtResource("5_uxb00")
+first_name = "Maximus"
+last_name = "Harmon"
+stats = SubResource("Resource_htjqw")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_l5jph"]
+script = ExtResource("7_wua41")
+strength = 86
+agility = 63
+endurance = 89
+intelligence = 82
+charisma = 64
+
+[sub_resource type="Resource" id="Resource_4fkxe"]
+script = ExtResource("5_uxb00")
+first_name = "Skylar"
+last_name = "Hinton"
+stats = SubResource("Resource_l5jph")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_sktpe"]
+script = ExtResource("7_wua41")
+strength = 99
+agility = 51
+endurance = 69
+intelligence = 64
+charisma = 14
+
+[sub_resource type="Resource" id="Resource_p8dlf"]
+script = ExtResource("5_uxb00")
+first_name = "America"
+last_name = "Stanton"
+stats = SubResource("Resource_sktpe")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_ulf2g"]
+script = ExtResource("7_wua41")
+strength = 21
+agility = 40
+endurance = 72
+intelligence = 46
+charisma = 15
+
+[sub_resource type="Resource" id="Resource_b0m1k"]
+script = ExtResource("5_uxb00")
+first_name = "Diana"
+last_name = "Fitzgerald"
+stats = SubResource("Resource_ulf2g")
+position = "Forward"
+age = 21
+
+[sub_resource type="Resource" id="Resource_gbnwq"]
+script = ExtResource("7_wua41")
+strength = 26
+agility = 93
+endurance = 95
+intelligence = 54
+charisma = 69
+
+[sub_resource type="Resource" id="Resource_sgaex"]
+script = ExtResource("5_uxb00")
+first_name = "Mike"
+last_name = "Hess"
+stats = SubResource("Resource_gbnwq")
+position = "Forward"
+age = 21
+
+[resource]
+script = ExtResource("6_c7sdp")
+selected_player = SubResource("Resource_1f7yx")
+draft = SubResource("Resource_2m1bq")
+league = SubResource("Resource_wua41")
+players = Array[ExtResource("5_uxb00")]([SubResource("Resource_t4awg"), SubResource("Resource_gmlxd"), SubResource("Resource_gwm48"), SubResource("Resource_ufg1v"), SubResource("Resource_pj7gu"), SubResource("Resource_cncyc"), SubResource("Resource_qf1ao"), SubResource("Resource_8rw4a"), SubResource("Resource_jupsi"), SubResource("Resource_t2hdn"), SubResource("Resource_ouvhu"), SubResource("Resource_jsyrb"), SubResource("Resource_56odo"), SubResource("Resource_y7xdc"), SubResource("Resource_rhwk5"), SubResource("Resource_s3rag"), SubResource("Resource_dn4vl"), SubResource("Resource_opcgf"), SubResource("Resource_jl6y3"), SubResource("Resource_24n2p"), SubResource("Resource_f0ww5"), SubResource("Resource_5v5xy"), SubResource("Resource_iiagr"), SubResource("Resource_njj8b"), SubResource("Resource_kjuem"), SubResource("Resource_y5cid"), SubResource("Resource_tjro6"), SubResource("Resource_qimx8"), SubResource("Resource_6gjlx"), SubResource("Resource_kw2o2"), SubResource("Resource_76heo"), SubResource("Resource_cm3ge"), SubResource("Resource_m1kar"), SubResource("Resource_dox2m"), SubResource("Resource_h7nnd"), SubResource("Resource_fooaa"), SubResource("Resource_w7qht"), SubResource("Resource_uhjvd"), SubResource("Resource_0aeap"), SubResource("Resource_7nhem"), SubResource("Resource_v274r"), SubResource("Resource_5m3no"), SubResource("Resource_mggf6"), SubResource("Resource_8a15h"), SubResource("Resource_424j7"), SubResource("Resource_fon7v"), SubResource("Resource_hkfjp"), SubResource("Resource_8k1bm"), SubResource("Resource_0iens"), SubResource("Resource_abgfv"), SubResource("Resource_rlf1q"), SubResource("Resource_4wc02"), SubResource("Resource_ui83v"), SubResource("Resource_khxjm"), SubResource("Resource_7lqqn"), SubResource("Resource_ktutl"), SubResource("Resource_hus4o"), SubResource("Resource_irddl"), SubResource("Resource_tk62t"), SubResource("Resource_ofdef"), SubResource("Resource_3cme3"), SubResource("Resource_xw7xy"), SubResource("Resource_075t1"), SubResource("Resource_p6tea"), SubResource("Resource_rfe6e"), SubResource("Resource_ls0pm"), SubResource("Resource_0621m"), SubResource("Resource_wvcb4"), SubResource("Resource_7cerp"), SubResource("Resource_e37tt"), SubResource("Resource_m1qh1"), SubResource("Resource_0nis0"), SubResource("Resource_5gj7i"), SubResource("Resource_x7xda"), SubResource("Resource_11k3j"), SubResource("Resource_wwyg2"), SubResource("Resource_l3ynh"), SubResource("Resource_i8e4w"), SubResource("Resource_fi8f2"), SubResource("Resource_rk26d"), SubResource("Resource_p0eq7"), SubResource("Resource_1dy2x"), SubResource("Resource_qb7ff"), SubResource("Resource_gp4qm"), SubResource("Resource_4fkxe"), SubResource("Resource_p8dlf"), SubResource("Resource_b0m1k"), SubResource("Resource_sgaex")])
+player_team = SubResource("Resource_c7sdp")
+current_team = SubResource("Resource_eelq8")

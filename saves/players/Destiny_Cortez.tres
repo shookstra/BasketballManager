@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_pkjdn"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_btdl0"]
+
+[sub_resource type="Resource" id="Resource_q2hbw"]
+script = ExtResource("2_btdl0")
+strength = 40
+agility = 63
+endurance = 85
+intelligence = 65
+charisma = 26
+
+[resource]
+script = ExtResource("1_pkjdn")
+first_name = "Destiny"
+last_name = "Cortez"
+stats = SubResource("Resource_q2hbw")
+position = "Forward"
+age = 21

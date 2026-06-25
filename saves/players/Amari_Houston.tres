@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_fyndl"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_kk06j"]
+
+[sub_resource type="Resource" id="Resource_aavtb"]
+script = ExtResource("2_kk06j")
+strength = 55
+agility = 95
+endurance = 99
+intelligence = 50
+charisma = 45
+
+[resource]
+script = ExtResource("1_fyndl")
+first_name = "Amari"
+last_name = "Houston"
+stats = SubResource("Resource_aavtb")
+position = "Forward"
+age = 21

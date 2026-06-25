@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_2ap6e"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_64jp1"]
+
+[sub_resource type="Resource" id="Resource_aj5xu"]
+script = ExtResource("2_64jp1")
+strength = 46
+agility = 41
+endurance = 67
+intelligence = 57
+charisma = 84
+
+[resource]
+script = ExtResource("1_2ap6e")
+first_name = "Jamar"
+last_name = "Spence"
+stats = SubResource("Resource_aj5xu")
+position = "Forward"
+age = 21

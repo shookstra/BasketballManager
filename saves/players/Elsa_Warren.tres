@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_tcyji"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_xealy"]
+
+[sub_resource type="Resource" id="Resource_15h4p"]
+script = ExtResource("2_xealy")
+strength = 85
+agility = 51
+endurance = 88
+intelligence = 72
+charisma = 13
+
+[resource]
+script = ExtResource("1_tcyji")
+first_name = "Elsa"
+last_name = "Warren"
+stats = SubResource("Resource_15h4p")
+position = "Forward"
+age = 21

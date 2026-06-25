@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_w6pey"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_vfcmh"]
+
+[sub_resource type="Resource" id="Resource_g5lve"]
+script = ExtResource("2_vfcmh")
+strength = 44
+agility = 54
+endurance = 68
+intelligence = 75
+charisma = 49
+
+[resource]
+script = ExtResource("1_w6pey")
+first_name = "Marcelo"
+last_name = "Gardner"
+stats = SubResource("Resource_g5lve")
+position = "Forward"
+age = 21

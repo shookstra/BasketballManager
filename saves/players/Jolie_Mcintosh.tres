@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_1epfi"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_81aui"]
+
+[sub_resource type="Resource" id="Resource_dsceh"]
+script = ExtResource("2_81aui")
+strength = 34
+agility = 61
+endurance = 51
+intelligence = 47
+charisma = 13
+
+[resource]
+script = ExtResource("1_1epfi")
+first_name = "Jolie"
+last_name = "Mcintosh"
+stats = SubResource("Resource_dsceh")
+position = "Forward"
+age = 21

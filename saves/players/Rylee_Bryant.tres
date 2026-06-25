@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_sgkn7"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_4mfqx"]
+
+[sub_resource type="Resource" id="Resource_ynkxp"]
+script = ExtResource("2_4mfqx")
+strength = 79
+agility = 62
+endurance = 54
+intelligence = 48
+charisma = 96
+
+[resource]
+script = ExtResource("1_sgkn7")
+first_name = "Rylee"
+last_name = "Bryant"
+stats = SubResource("Resource_ynkxp")
+position = "Forward"
+age = 21

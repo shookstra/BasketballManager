@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_p2aqb"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_6d7y2"]
+
+[sub_resource type="Resource" id="Resource_psy6o"]
+script = ExtResource("2_6d7y2")
+strength = 89
+agility = 44
+endurance = 96
+intelligence = 44
+charisma = 82
+
+[resource]
+script = ExtResource("1_p2aqb")
+first_name = "Shemar"
+last_name = "Hahn"
+stats = SubResource("Resource_psy6o")
+position = "Forward"
+age = 21

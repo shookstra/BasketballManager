@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_f4iei"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_vwovv"]
+
+[sub_resource type="Resource" id="Resource_r5hcm"]
+script = ExtResource("2_vwovv")
+strength = 32
+agility = 64
+endurance = 56
+intelligence = 93
+charisma = 79
+
+[resource]
+script = ExtResource("1_f4iei")
+first_name = "Daisha"
+last_name = "Holmes"
+stats = SubResource("Resource_r5hcm")
+position = "Forward"
+age = 21

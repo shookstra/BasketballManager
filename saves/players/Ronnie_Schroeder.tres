@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Player" format=3]
+
+[ext_resource type="Script" path="res://resources/player.gd" id="1_mxrwb"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="2_38gg8"]
+
+[sub_resource type="Resource" id="Resource_dxbl7"]
+script = ExtResource("2_38gg8")
+strength = 62
+agility = 73
+endurance = 51
+intelligence = 41
+charisma = 25
+
+[resource]
+script = ExtResource("1_mxrwb")
+first_name = "Ronnie"
+last_name = "Schroeder"
+stats = SubResource("Resource_dxbl7")
+position = "Forward"
+age = 21
