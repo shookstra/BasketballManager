@@ -1,6 +1,10 @@
 class_name Game
 extends Resource
 
+enum States { IDLE, START_POSSESSION, DECIDE, RESOLVE_ACTION, HANDLE_SHOT, CHANGE_POSSESSION, END_GAME }
+var state: States = States.IDLE
+
+
 var team_1: Team = Team.new()
 var team_2: Team = Team.new()
 var possession_team: Team
@@ -8,18 +12,19 @@ var possession_player: Player
 var team_1_score: int
 var team_2_score: int
 var time_remaining_in_seconds: int = 2880 # 48 minutes * 60 seconds
-var shot_clock: int = 24
+var shot_clock: int = 25
 var rng_seed = randi()
 
 func _ready():
 	randomize()
 	possession_team = team_1 if 0 == randi_range(0,1) else team_2
-	possession_team = team_1
 	start_possession()
 
 func start_possession():
-	shot_clock = 24
-	possession_step()
+	shot_clock = 25
+	state = States.START_POSSESSION
+	if time_remaining_in_seconds > 0:
+		call_deferred("possession_step")
 
 func possession_step():
 	# pick ball handler (simple: best ball handler)
@@ -42,14 +47,15 @@ func possession_step():
 				handle_shot_result(possession_player, made2)
 			else:
 				turnover()
+				print_game_info()
 		"pass":
 			var target = possession_team.find_best_receiver()
 			print("%s passes the ball to %s." % [possession_player.get_full_name(), target.get_full_name()])
 			handle_pass(target)
 		"reset":
 			shot_clock -= 4
-			advance_clock(1.0)
-			possession_step()
+	advance_clock(10)
+			#possession_step()
 
 static func decide(player: Player, context: Dictionary) -> Dictionary:
 	# compute utilities for actions: shoot, drive, pass, reset
@@ -87,7 +93,9 @@ static func get_soft_max(scores: Array) -> int:
 func handle_shot_result(player, made):
 	if made:
 		print("%s scores!!" % player.get_full_name())
-		end_possession()
+		award_points(2)
+		change_possession()
+		print_game_info()
 	else:
 		print("%s misses :/" % player.get_full_name())
 		# simple rebound resolution
@@ -105,12 +113,9 @@ func turnover():
 func change_possession():
 	possession_team = team_1 if possession_team == team_2 else team_2
 	start_possession()
-	
-func end_possession():
-	# update stats, reset shot clock, alternate possession
-	change_possession()
 
 func advance_clock(seconds):
+	self.time_remaining_in_seconds = time_remaining_in_seconds - seconds
 	# update fatigue for players on court
 	for p in team_1.players_playing:
 		p.update_fatigue(seconds)
@@ -119,3 +124,24 @@ func advance_clock(seconds):
 		
 func handle_pass(target_player: Player):
 	possession_player = target_player
+	
+func print_game_info():
+	#var team_1: Team = Team.new()
+	#var team_2: Team = Team.new()
+	#var possession_team: Team
+	#var possession_player: Player
+	#var team_1_score: int
+	#var team_2_score: int
+	#var time_remaining_in_seconds: int = 2880 # 48 minutes * 60 seconds
+	#var shot_clock: int = 25
+	#var rng_seed = randi()
+	
+	print("---------------------------------")
+	print("Team_1 %x %x Team_2 %x" % [int(team_1_score), int(time_remaining_in_seconds/60), int(team_2_score)])
+	print("---------------------------------")
+	
+func award_points(amount: int):
+	if possession_team == team_1:
+		team_1_score += amount
+	else:
+		team_2_score += amount

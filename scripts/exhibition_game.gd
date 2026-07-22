@@ -8,10 +8,11 @@ extends Node
 
 
 var game: Game
-# --- 2. Team Profiles (Stats are out of 100 for easy probability) ---
-
 
 func _ready() -> void:
+	start_game()
+
+func start_game():
 	# used to get a different seed every time
 	randomize()
 	game = Game.new()
@@ -19,14 +20,15 @@ func _ready() -> void:
 	game.team_1.players = team_generator.generate_players(13)
 	game.team_2 = team_generator.generate_roster()
 	game.team_2.players = team_generator.generate_players(13)
-	
 	print("--------------------------------------")
 	print("--- Get ready for some basketball! ---")
 	print("--------------------------------------")
 	
+	#game.possession_team = game.team_1 if randi_range(0,1) == 0 else game.team_2
+	#game.start_possession()
 	# Simulate the first 10 possessions
 	for i in range(10):
-		## TODO Add randomization here
+		## TODO Add better randomization here
 		game.possession_team = game.team_1 if randi_range(0,1) == 0 else game.team_2
 		game.start_possession()
 		print("") # Add a blank line between plays for readability

@@ -59,6 +59,6 @@ func get_ball_handler():
 		
 func find_best_receiver():
 	return players[randi_range(0,4)]
-	## TODO Loop through players and return the best ball handler
+	## TODO Loop through players and return the best receiver
 	#for player in players:
 		#pass
