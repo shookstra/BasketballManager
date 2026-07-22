@@ -4,6 +4,22 @@ extends Control
 var names: Names = Names.new()
 var team: Team = Team.new()
 
+func generate_schedule() -> Schedule:
+	var total_number_of_games = Data._save.number_of_teams * Data._save.number_of_games
+	var new_schedule = Schedule.new()
+	for team in Data._save.league.teams:
+		for game_number in Data._save.league.teams.size():
+			var teams = Data._save.league.teams
+			var new_game = Game.new()
+			new_game.team_1 = team
+			# if they're the same team then go to the next team
+			if team != teams[game_number]:
+				new_game.team_1 = team
+				new_game.team_2 = teams[game_number]
+				new_schedule.games.append(new_game)
+				print(new_game.team_1.name + " Vs. " + new_game.team_2.name)
+	return new_schedule
+
 func generate_league() -> League:
 	var league: League = League.new()
 	for x in Data._save.number_of_teams - 1:
@@ -49,21 +65,20 @@ func generate_players(amount) -> Array[Player]:
 
 func generate_player() -> Player:
 	var new_player: Player = Player.new()
-	new_player.stats = generate_stats()
+	new_player = generate_stats(new_player)
 	var name_array: Array = generate_name()
 	
 	new_player.first_name = name_array[0]
 	new_player.last_name = name_array[1]
 	return new_player
 
-func generate_stats() -> Stats:
-	var new_stats: Stats = Stats.new()
-	new_stats.agility = randi_range(40, 100)
-	new_stats.charisma = randi_range(10, 100)
-	new_stats.endurance = randi_range(50, 100)
-	new_stats.intelligence = randi_range(40, 100)
-	new_stats.strength = randi_range(20, 100)
-	return new_stats
+func generate_stats(player: Player) -> Player:
+	player.agility = randi_range(40, 100)
+	player.charisma = randi_range(10, 100)
+	player.endurance = randi_range(50, 100)
+	player.intelligence = randi_range(40, 100)
+	player.strength = randi_range(20, 100)
+	return player
 
 func generate_name() -> Array[String]:
 	var num1: int = randi() % names.first_names.size()-1

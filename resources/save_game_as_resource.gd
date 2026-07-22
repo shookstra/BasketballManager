@@ -4,6 +4,7 @@ extends Resource
 @export var selected_player: Player = Player.new()
 @export var draft: Draft = Draft.new()
 @export var number_of_teams: int = 6
+@export var number_of_games: int = 82
 @export var league: League = League.new()
 @export var players: Array[Player] = []
 @export var player_team: Team = Team.new()

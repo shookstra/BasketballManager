@@ -15,11 +15,11 @@ func set_team():
 		var new_card = player_card.instantiate()
 		new_card.player = player
 		new_card.get_node("HBoxContainer/NameLabel").text = player.first_name + " " + player.last_name
-		new_card.get_node("HBoxContainer/StrengthLabel").text = str(player.stats.strength)
-		new_card.get_node("HBoxContainer/AgilityLabel").text = str(player.stats.agility)
-		new_card.get_node("HBoxContainer/EnduranceLabel").text = str(player.stats.endurance)
-		new_card.get_node("HBoxContainer/IntelligenceLabel").text = str(player.stats.intelligence)
-		new_card.get_node("HBoxContainer/CharismaLabel").text = str(player.stats.charisma)
+		new_card.get_node("HBoxContainer/StrengthLabel").text = str(player.strength)
+		new_card.get_node("HBoxContainer/AgilityLabel").text = str(player.agility)
+		new_card.get_node("HBoxContainer/EnduranceLabel").text = str(player.endurance)
+		new_card.get_node("HBoxContainer/IntelligenceLabel").text = str(player.intelligence)
+		new_card.get_node("HBoxContainer/CharismaLabel").text = str(player.charisma)
 		player_list.add_child(new_card)
 
 func clear_team():

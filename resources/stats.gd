@@ -1,11 +1,19 @@
 class_name Stats
 extends Resource
 
+@export_range(1, 99) var shooting_skill: int
+@export_range(1, 99) var pass_quality: int
+@export_range(1, 99) var decision_speed: int
+@export_range(1, 99) var passing: int
+@export_range(1, 99) var rebounding: int
+@export_range(1, 99) var defense: int
+# 
 @export var strength: int
 @export var agility: int
 @export var endurance: int
 @export var intelligence: int
 @export var charisma: int
+#
 @export var minutes_played: float
 @export var total_points: int
 @export var average_points: float

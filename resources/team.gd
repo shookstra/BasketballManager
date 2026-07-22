@@ -3,9 +3,11 @@ extends Resource
 
 @export var name: String
 @export var players: Array
+@export var players_playing: Array[Player]
 @export var city: String
 @export var wins: int
 @export var losses: int
+@export var schedule: Array[Game]
 
 var cities = [
 	"Lincoln",
@@ -48,3 +50,8 @@ func _init(new_name = "Default Name", new_players = [], new_city = "Default City
 	name = new_name
 	players = new_players
 	city = new_city
+	
+func get_ball_handler():
+	for player in players:
+		pass
+	return
