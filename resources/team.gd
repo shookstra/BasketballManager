@@ -52,6 +52,13 @@ func _init(new_name = "Default Name", new_players = [], new_city = "Default City
 	city = new_city
 	
 func get_ball_handler():
-	for player in players:
-		pass
-	return
+	return players[randi_range(0,4)]
+	## TODO Loop through players and return the best ball handler
+	#for player in players:
+		#pass
+		
+func find_best_receiver():
+	return players[randi_range(0,4)]
+	## TODO Loop through players and return the best ball handler
+	#for player in players:
+		#pass

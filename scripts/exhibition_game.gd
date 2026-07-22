@@ -5,13 +5,16 @@ extends Node
 # ------------------
 
 @onready var team_generator = $TeamGenerator
-@onready var game: Game = Game.new()
+
+
+var game: Game
 # --- 2. Team Profiles (Stats are out of 100 for easy probability) ---
 
 
 func _ready() -> void:
 	# used to get a different seed every time
 	randomize()
+	game = Game.new()
 	game.team_1 = team_generator.generate_roster()
 	game.team_1.players = team_generator.generate_players(13)
 	game.team_2 = team_generator.generate_roster()
@@ -23,6 +26,8 @@ func _ready() -> void:
 	
 	# Simulate the first 10 possessions
 	for i in range(10):
+		## TODO Add randomization here
+		game.possession_team = game.team_1 if randi_range(0,1) == 0 else game.team_2
 		game.start_possession()
 		print("") # Add a blank line between plays for readability
 

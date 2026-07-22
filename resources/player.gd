@@ -35,6 +35,9 @@ func _init(new_first_name = "Default First Name", new_last_name = "Default Last 
 	age = new_age
 	calculate_derived_stats()
 	
+func get_full_name():
+	return str(self.first_name + " " + self.last_name)
+	
 # calculate shooting %, pass quality, etc using primary stats
 func calculate_derived_stats():
 	self.shooting_skill = int((self.strength * 0.3 + self.agility * 0.5 + self.intelligence * 0.2) / 100)
@@ -45,7 +48,3 @@ func update_fatigue(delta_time: float):
 	# fatigue increases with time on court, reduced by endurance
 	fatigue += int(delta_time * (1.0 - self.endurance / 150.0))
 	fatigue = clamp(fatigue, 0.0, 1.0)
-
-#func request_action(context: Dictionary) -> Dictionary:
-	## context: {shot_clock, defender_distance, score_margin, time_remaining}
-	#return DecisionEngine.decide(self, context)

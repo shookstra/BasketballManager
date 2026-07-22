@@ -3,17 +3,17 @@ extends Resource
 
 var team_1: Team = Team.new()
 var team_2: Team = Team.new()
-var possesion_team: Team
+var possession_team: Team
+var possession_player: Player
 var team_1_score: int
 var team_2_score: int
 var time_remaining_in_seconds: int = 2880 # 48 minutes * 60 seconds
 var shot_clock: int = 24
 var rng_seed = randi()
 
-var possession_team: Team
-
 func _ready():
 	randomize()
+	possession_team = team_1 if 0 == randi_range(0,1) else team_2
 	possession_team = team_1
 	start_possession()
 
@@ -23,28 +23,29 @@ func start_possession():
 
 func possession_step():
 	# pick ball handler (simple: best ball handler)
-	var ball_handler = possession_team.get_ball_handler()
+	possession_player = possession_team.get_ball_handler()
 	var context = {
 		"shot_clock": shot_clock,
 		"defender_distance": randf_range(0.5, 4.0),
 		"defender_pressure": randf()
 	}
-	var decision = ball_handler.request_action(context)
+	var decision = decide(possession_player, context)
 	match decision.action:
 		"shoot":
-			var made = ShotCalculator.resolve_shot(ball_handler, context)
-			handle_shot_result(ball_handler, made)
+			print("%s shoots the ball..." % possession_player.get_full_name())
+			var made = ShotCalculator.resolve_shot(possession_player, context)
+			handle_shot_result(possession_player, made)
 		"drive":
-			# simplified: drive leads to contested shot or pass
+			print("%s drives..." % possession_player.get_full_name())
 			if randf() < 0.6:
-				var made2 = ShotCalculator.resolve_shot(ball_handler, context)
-				handle_shot_result(ball_handler, made2)
+				var made2 = ShotCalculator.resolve_shot(possession_player, context)
+				handle_shot_result(possession_player, made2)
 			else:
 				turnover()
 		"pass":
-			var target = possession_team.find_best_receiver(ball_handler)
-			## TODO Handle pass logic
-			#_handle_pass(ball_handler, target)
+			var target = possession_team.find_best_receiver()
+			print("%s passes the ball to %s." % [possession_player.get_full_name(), target.get_full_name()])
+			handle_pass(target)
 		"reset":
 			shot_clock -= 4
 			advance_clock(1.0)
@@ -85,10 +86,10 @@ static func get_soft_max(scores: Array) -> int:
 	
 func handle_shot_result(player, made):
 	if made:
-		print("%s scores" % player.name)
+		print("%s scores!!" % player.get_full_name())
 		end_possession()
 	else:
-		print("%s misses" % player.name)
+		print("%s misses :/" % player.get_full_name())
 		# simple rebound resolution
 	if randf() < 0.5:
 		print("Offensive rebound")
@@ -98,7 +99,7 @@ func handle_shot_result(player, made):
 		change_possession()
 
 func turnover():
-	print("Turnover")
+	print("Turnover :(")
 	change_possession()
 	
 func change_possession():
@@ -108,11 +109,13 @@ func change_possession():
 func end_possession():
 	# update stats, reset shot clock, alternate possession
 	change_possession()
-	
 
 func advance_clock(seconds):
 	# update fatigue for players on court
-	for p in team_1.get_on_court_players():
+	for p in team_1.players_playing:
 		p.update_fatigue(seconds)
-	for p in team_2.get_on_court_players():
+	for p in team_2.players_playing:
 		p.update_fatigue(seconds)
+		
+func handle_pass(target_player: Player):
+	possession_player = target_player
