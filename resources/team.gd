@@ -62,3 +62,9 @@ func find_best_receiver():
 	## TODO Loop through players and return the best receiver
 	#for player in players:
 		#pass
+		
+func find_best_rebounder():
+	return players[randi_range(0,4)]
+	## TODO Loop through players and return the best rebounder
+	#for player in players:
+		#pass
