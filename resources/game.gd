@@ -25,8 +25,9 @@ func start_possession():
 		possession_step()
 
 func possession_step():
-	# pick ball handler (simple: best ball handler)
-	possession_player = possession_team.get_ball_handler()
+	if possession_player == null:
+		possession_player = possession_team.get_ball_handler()
+		emit_print_to_gui("### Player: " + possession_player.get_full_name())
 	var context = {
 		"shot_clock": shot_clock,
 		"defender_distance": randf_range(0.5, 4.0),
@@ -38,20 +39,21 @@ func possession_step():
 			emit_print_to_gui(str("%s shoots the ball..." % possession_player.get_full_name()))
 			var made = ShotCalculator.resolve_shot(possession_player, context)
 			handle_shot_result(possession_player, made)
-			advance_clock(2)
+			advance_clock(randi_range(2,5))
 		"drive":
 			emit_print_to_gui("%s drives..." % possession_player.get_full_name())
+			advance_clock(randi_range(2,5))
 			if randf() < 0.6:
 				var made2 = ShotCalculator.resolve_shot(possession_player, context)
 				handle_shot_result(possession_player, made2)
 			else:
 				turnover()
-			advance_clock(2)
 		"pass":
 			var target = possession_team.find_best_receiver()
 			emit_print_to_gui("%s passes the ball to %s." % [possession_player.get_full_name(), target.get_full_name()])
 			handle_pass(target)
 			advance_clock(2)
+			emit_print_to_gui("### Player: %s" % possession_player.get_full_name())
 		"reset":
 			shot_clock -= 4
 			advance_clock(2.0)
@@ -107,6 +109,8 @@ func handle_shot_result(player, made):
 			advance_clock(1)
 			var rebounder: Player = possession_team.find_best_rebounder()
 			emit_print_to_gui(rebounder.get_full_name() + " grabs the offensive rebound.")
+			possession_player = rebounder
+			emit_print_to_gui("### Player: " + rebounder.get_full_name())
 			# schedule next possession step
 			possession_step()
 		else:
@@ -140,9 +144,9 @@ func handle_pass(target_player: Player):
 	possession_step()
 	
 func print_game_info():
-	emit_print_to_gui("---------------------------------------------------------")
-	emit_print_to_gui("- " + team_1.name + " " + str(team_1_score) + " Time:" + str(time_remaining_in_seconds) + " " + team_2.name + " " + str(team_2_score) + " -")
-	emit_print_to_gui("---------------------------------------------------------")
+	emit_print_to_gui("--------------------------------------------------------")
+	emit_print_to_gui("### " + team_1.name + " " + str(team_1_score) + " Time:" + str(time_remaining_in_seconds) + " " + team_2.name + " " + str(team_2_score) + " -")
+	emit_print_to_gui("--------------------------------------------------------")
 	
 func award_points(amount: int):
 	if possession_team == team_1:

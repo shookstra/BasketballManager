@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iwnr0jriig2w" path="res://scripts/exhibition_game.gd" id="1_4w6ab"]
 [ext_resource type="PackedScene" uid="uid://cbogw7qnb1twm" path="res://scenes/TeamGenerator.tscn" id="2_ixm5b"]
+[ext_resource type="PackedScene" uid="uid://cxxirbu37mvgv" path="res://scenes/roster_mode.tscn" id="3_6e5d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixm5b"]
 bg_color = Color(0.2627451, 0.20392157, 0.33333334, 1)
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_4w6ab")
 
 [node name="TeamGenerator" parent="." unique_id=596372754 instance=ExtResource("2_ixm5b")]
@@ -28,12 +30,18 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ixm5b")
 
 [node name="PlayByPlay" type="Panel" parent="." unique_id=2132119143]
-layout_mode = 0
-offset_left = 236.0
-offset_top = 74.0
-offset_right = 967.0
-offset_bottom = 547.0
-metadata/_edit_use_anchors_ = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1893.0
+offset_top = -924.0
+offset_right = -1246.0
+offset_bottom = -183.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PlayByPlay" unique_id=1138100669]
 custom_minimum_size = Vector2(200, 200)
@@ -47,6 +55,7 @@ offset_right = -18.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayByPlay/ScrollContainer" unique_id=1272385716]
 clip_contents = true
@@ -62,3 +71,47 @@ text = "Play-by-Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="RosterModeTeam1" parent="." unique_id=444458120 instance=ExtResource("3_6e5d2")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1148.0
+offset_top = 5.0
+offset_right = 745.952
+offset_bottom = -147.92798
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RosterModeTeam2" parent="." unique_id=1036864312 instance=ExtResource("3_6e5d2")]
+layout_mode = 1
+offset_left = 1173.0
+offset_top = 549.0
+offset_right = 1173.0
+offset_bottom = 549.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1070581932]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 0
+offset_left = 659.0
+offset_top = 10.0
+offset_right = 809.0
+offset_bottom = 310.0
+
+[node name="NextPlayButton" type="Button" parent="VBoxContainer" unique_id=1711354003]
+layout_mode = 2
+text = "Next Possession"
+metadata/_edit_lock_ = true
+
+[node name="NextPlayButton3" type="Button" parent="VBoxContainer" unique_id=1976079839]
+layout_mode = 2
+text = "Last Two Minutes"
+metadata/_edit_lock_ = true
+
+[node name="EndOfGameButton" type="Button" parent="VBoxContainer" unique_id=1111644415]
+layout_mode = 2
+text = "End of Game"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainer/NextPlayButton" to="." method="_on_next_play_button_pressed"]

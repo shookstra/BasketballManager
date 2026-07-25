@@ -4,7 +4,7 @@ const player_card = preload("res://scenes/PlayerCard.tscn")
 const team_card = preload("res://scenes/TeamCard.tscn")
 
 @onready var league_name_line_edit = $NewLeagueMode/CreateLeagueContainer/LeagueNameLineEdit
-@onready var city_line_edit = $NewLeagueMode/CreateLeagueContainer/LeagueNameLineEdit
+@onready var city_line_edit = $NewLeagueMode/CreateLeagueContainer/CityLineEdit
 @onready var team_name_line_edit = $NewLeagueMode/CreateLeagueContainer/TeamNameLineEdit
 @onready var gm_line_edit = $NewLeagueMode/CreateLeagueContainer/GMLineEdit
 @onready var team_generator: TeamGenerator
