@@ -18,11 +18,16 @@ func generate_schedule() -> Schedule:
 				new_game.team_2 = teams[game_number]
 				new_schedule.games.append(new_game)
 				print(new_game.team_1.name + " Vs. " + new_game.team_2.name)
+	new_schedule.games.shuffle()
 	return new_schedule
 
 func generate_league() -> League:
 	var league: League = League.new()
 	for x in Data._save.number_of_teams - 1:
+		var new_team = generate_roster()
+		for team in league.teams:
+			while team.name == new_team.name:
+				new_team = generate_roster()
 		league.teams.append(generate_roster())
 	return league
 

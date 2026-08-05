@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bgvrhxq7o5sc5"]
+
+[ext_resource type="Script" uid="uid://8g2fi0mwsyve" path="res://scripts/game_card.gd" id="1_e24nm"]
+
+[node name="GameCard" type="Control" unique_id=851437385]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e24nm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=996770619]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team1Container" type="VBoxContainer" parent="HBoxContainer" unique_id=1626192975]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team1Label" type="Label" parent="HBoxContainer/Team1Container" unique_id=1862231647]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Team1"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team1RecordLabel" type="Label" parent="HBoxContainer/Team1Container" unique_id=1090966907]
+layout_mode = 2
+text = "10-10"
+horizontal_alignment = 2
+
+[node name="AtLabel" type="Label" parent="HBoxContainer" unique_id=183175005]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "@"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team2Container" type="VBoxContainer" parent="HBoxContainer" unique_id=568572455]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team2Label" type="Label" parent="HBoxContainer/Team2Container" unique_id=1470327338]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Team2"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Team2RecordLabel" type="Label" parent="HBoxContainer/Team2Container" unique_id=361092292]
+layout_mode = 2
+text = "10-10"

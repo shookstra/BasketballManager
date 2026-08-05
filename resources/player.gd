@@ -27,7 +27,6 @@ extends Resource
 @export var total_assists: int
 @export var average_assists: float
 
-
 func _init(new_first_name = "Default First Name", new_last_name = "Default Last Name", new_position = "Forward", new_age = 21):
 	first_name = new_first_name
 	last_name = new_last_name
@@ -48,3 +47,32 @@ func update_fatigue(delta_time: float):
 	# fatigue increases with time on court, reduced by endurance
 	fatigue += int(delta_time * (1.0 - self.endurance / 150.0))
 	fatigue = clamp(fatigue, 0.0, 1.0)
+	
+func export_to_dict() -> Dictionary:
+	return {
+		#
+		"first_name": first_name,
+		"last_name": last_name,
+		"position": position,
+		"age": age,
+		"fatigue": fatigue,
+		#
+		"shooting_skill": shooting_skill,
+		"pass_quality": pass_quality,
+		"decision_speed": decision_speed,
+		"rebounding": rebounding,
+		"defense": defense,
+		#
+		"strength": strength,
+		"agility": agility,
+		"endurance": endurance,
+		"intelligence": intelligence,
+		"charisma": charisma,
+		"minutes_played": minutes_played,
+		"total_points": total_points,
+		"average_points": average_points,
+		"average_rebounds": average_rebounds,
+		"total_assists": total_assists,
+		"average_assists": average_assists
+	}
+	

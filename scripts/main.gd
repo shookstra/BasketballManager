@@ -2,15 +2,18 @@ extends Control
 
 const player_card = preload("res://scenes/PlayerCard.tscn")
 const team_card = preload("res://scenes/TeamCard.tscn")
+const game_card = preload("res://scenes/GameCard.tscn")
 
 @onready var league_name_line_edit = $NewLeagueMode/CreateLeagueContainer/LeagueNameLineEdit
-@onready var city_line_edit = $NewLeagueMode/CreateLeagueContainer/LeagueNameLineEdit
+@onready var city_line_edit = $NewLeagueMode/CreateLeagueContainer/CityLineEdit
 @onready var team_name_line_edit = $NewLeagueMode/CreateLeagueContainer/TeamNameLineEdit
 @onready var gm_line_edit = $NewLeagueMode/CreateLeagueContainer/GMLineEdit
 @onready var team_generator: TeamGenerator
 @onready var draft_manager: DraftManager
 @onready var draft_picks_window := $DraftMode/DraftPicksWindow/ScrollContainer/VBoxContainer
 @onready var roster_mode := $NewLeagueMode/RosterMode
+@onready var schedule_mode := $ScheduleContainer/ScheduleMode/AvailablePlayers/ScrollContainer/VBoxContainer
+@onready var my_schedule_mode := $ScheduleContainer/MyScheduleMode/AvailablePlayers/ScrollContainer/VBoxContainer
 
 var save := SaveGameAsResource.new()
 
@@ -27,6 +30,16 @@ func _ready() -> void:
 			Data._save.league.teams.append(new_team)
 	if (Data._save.league.schedule == null):
 		Data._save.league.schedule = team_generator.generate_schedule()
+	else:
+		for game: Game in Data._save.league.schedule.games:
+			var new_card: GameCard = game_card.instantiate()
+			new_card.team_1 = game.team_1
+			new_card.team_2 = game.team_2
+			schedule_mode.add_child(new_card)
+			if Data._save.player_team == game.team_1 || Data._save.player_team == game.team_2:
+				var duplicate_card = new_card.duplicate()
+				my_schedule_mode.add_child(duplicate_card)
+			#print(game.team_1.name + " VS. " + game.team_2.name)
 	$Dashboard/SidebarColorRect2/TeamNameLabel.text = Data._save.player_team.city + " " + Data._save.player_team.name
 	
 	if (!Data._save.players):
@@ -34,6 +47,9 @@ func _ready() -> void:
 		
 	set_list_of_teams()
 	set_available_players_list()
+	
+	#var test = db.query_players()
+	#print(test)
 
 func set_available_players_list():
 	var container = $DraftMode/AvailablePlayers/ScrollContainer/VBoxContainer
@@ -71,16 +87,19 @@ func _on_create_league_button_pressed() -> void:
 	Data._save.player_team = new_team
 	Data._save_game()
 
+
+func set_active_mode(node: Node) -> void:
+	$DraftMode.visible = false
+	$NewLeagueMode.visible = false
+	$ScheduleMode.visible = false
+	node.visible = true
+
 # show available players
 func _on_draft_button_pressed() -> void:
-	$DraftMode.visible = true
-	$NewLeagueMode.visible = false
-	$LeagueMode.visible = false
+	set_active_mode($DraftMode)
 
 func _on_league_button_pressed() -> void:
-	$DraftMode.visible = false
-	$NewLeagueMode.visible = true
-	$LeagueMode.visible = false
+	set_active_mode($NewLeagueMode)
 	
 func _on_player_selected(new_player_card: PlayerCard):
 	Data._save.selected_player = new_player_card.player
@@ -151,3 +170,6 @@ func set_draft_picks():
 
 func _on_save_game_button_pressed() -> void:
 	Data._save_game()
+
+func _on_schedule_button_pressed() -> void:
+	set_active_mode($ScheduleMode)

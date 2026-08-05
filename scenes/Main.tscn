@@ -59,6 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s0nni")
 script = ExtResource("1_qbsmt")
+metadata/_edit_lock_ = true
 
 [node name="TeamGenerator" parent="." unique_id=596372754 instance=ExtResource("2_cpr0p")]
 layout_mode = 1
@@ -125,6 +126,10 @@ text = "Draft
 layout_mode = 2
 text = "League"
 
+[node name="ScheduleButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=1499852331]
+layout_mode = 2
+text = "Schedule"
+
 [node name="RosterButton" type="Button" parent="Dashboard/VBoxContainer" unique_id=750615770]
 layout_mode = 2
 text = "Roster"
@@ -136,6 +141,7 @@ text = "Settings"
 [node name="ExhibitionMode" type="Node" parent="." unique_id=1376032366]
 
 [node name="NewLeagueMode" type="Control" parent="." unique_id=61726855]
+visible = false
 anchors_preset = 0
 offset_left = 107.0
 offset_top = 51.0
@@ -315,24 +321,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RoundLabel" type="Label" parent="DraftMode" unique_id=1075372022]
-layout_mode = 0
-offset_left = 934.0
-offset_top = 46.0
-offset_right = 1053.0
-offset_bottom = 85.0
-theme_override_font_sizes/font_size = 32
-text = "Round 1"
-
 [node name="AvailablePlayers" type="Panel" parent="DraftMode" unique_id=1513581539]
 layout_mode = 0
 offset_left = 100.0
-offset_top = 92.0
+offset_top = 50.0
 offset_right = 850.0
-offset_bottom = 592.0
+offset_bottom = 550.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = ExtResource("5_kiw3p")
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="DraftMode/AvailablePlayers" unique_id=989649931]
 custom_minimum_size = Vector2(30, 40)
@@ -462,9 +458,9 @@ metadata/_edit_lock_ = true
 [node name="SelectedPlayer" type="Panel" parent="DraftMode" unique_id=815688568]
 layout_mode = 0
 offset_left = 857.0
-offset_top = 92.0
+offset_top = 50.0
 offset_right = 1110.0
-offset_bottom = 235.0
+offset_bottom = 193.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
 metadata/_edit_lock_ = true
@@ -521,9 +517,9 @@ metadata/_edit_lock_ = true
 [node name="SaveGameWindow" type="Panel" parent="DraftMode" unique_id=1148457244]
 layout_mode = 0
 offset_left = 858.0
-offset_top = 242.0
+offset_top = 200.0
 offset_right = 1111.0
-offset_bottom = 337.0
+offset_bottom = 295.0
 theme = ExtResource("1_s0nni")
 theme_override_styles/panel = SubResource("StyleBoxFlat_400sg")
 metadata/_edit_lock_ = true
@@ -570,9 +566,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1120.0
-offset_top = 93.0
+offset_top = 50.0
 offset_right = 1651.0
-offset_bottom = 699.0
+offset_bottom = 656.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kiw3p")
@@ -613,16 +609,136 @@ offset_bottom = 40.0
 script = ExtResource("6_aug50")
 metadata/_edit_lock_ = true
 
-[node name="LeagueMode" type="Control" parent="." unique_id=296906562]
-visible = false
+[node name="ScheduleContainer" type="Control" parent="." unique_id=1350941545]
 anchors_preset = 0
-offset_left = 104.0
-offset_top = 78.0
-offset_right = 1142.0
-offset_bottom = 634.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScheduleMode" type="Control" parent="ScheduleContainer" unique_id=1071183083]
+anchors_preset = 0
+offset_left = 1086.0
+offset_top = 52.0
+offset_right = 1887.0
+offset_bottom = 933.0
+
+[node name="AvailablePlayers" type="Panel" parent="ScheduleContainer/ScheduleMode" unique_id=405836129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = ExtResource("5_kiw3p")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="ScheduleContainer/ScheduleMode/AvailablePlayers" unique_id=1751260007]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="Team1Label" type="Label" parent="ScheduleContainer/ScheduleMode/AvailablePlayers/Panel" unique_id=1014471188]
+layout_mode = 0
+offset_right = 801.0
+offset_bottom = 41.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Upcoming Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScheduleContainer/ScheduleMode/AvailablePlayers" unique_id=480422350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 53.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScheduleContainer/ScheduleMode/AvailablePlayers/ScrollContainer" unique_id=660018077]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+metadata/_edit_lock_ = true
+
+[node name="MyScheduleMode" type="Control" parent="ScheduleContainer" unique_id=1252734006]
+anchors_preset = 0
+offset_left = 169.0
+offset_top = 52.0
+offset_right = 970.0
+offset_bottom = 933.0
+
+[node name="AvailablePlayers" type="Panel" parent="ScheduleContainer/MyScheduleMode" unique_id=39962275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s0nni")
+theme_override_styles/panel = ExtResource("5_kiw3p")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="ScheduleContainer/MyScheduleMode/AvailablePlayers" unique_id=356941468]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_400sg")
+metadata/_edit_lock_ = true
+
+[node name="Team1Label" type="Label" parent="ScheduleContainer/MyScheduleMode/AvailablePlayers/Panel" unique_id=1451652343]
+layout_mode = 0
+offset_right = 801.0
+offset_bottom = 41.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Upcoming Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScheduleContainer/MyScheduleMode/AvailablePlayers" unique_id=1468959859]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 53.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScheduleContainer/MyScheduleMode/AvailablePlayers/ScrollContainer" unique_id=1249975205]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Dashboard/VBoxContainer/DraftButton" to="." method="_on_draft_button_pressed"]
 [connection signal="pressed" from="Dashboard/VBoxContainer/LeagueButton" to="." method="_on_league_button_pressed"]
+[connection signal="pressed" from="Dashboard/VBoxContainer/ScheduleButton" to="." method="_on_schedule_button_pressed"]
 [connection signal="pressed" from="NewLeagueMode/CreateLeagueContainer/CreateLeagueButton" to="." method="_on_create_league_button_pressed"]
 [connection signal="pressed" from="DraftMode/SelectedPlayer/ConfirmPickButton" to="." method="_on_confirm_pick_button_pressed"]
 [connection signal="pressed" from="DraftMode/SaveGameWindow/SaveGameButton" to="." method="_on_save_game_button_pressed"]
