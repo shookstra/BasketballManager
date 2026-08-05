@@ -53,6 +53,7 @@ func possession_step():
 			emit_print_to_gui("%s passes the ball to %s." % [possession_player.get_full_name(), target.get_full_name()])
 			handle_pass(target)
 			advance_clock(2)
+			emit_print_to_gui("### Player: %s" % possession_player.get_full_name())
 		"reset":
 			shot_clock -= 4
 			advance_clock(2.0)
