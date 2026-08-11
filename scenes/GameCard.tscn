@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8g2fi0mwsyve" path="res://scripts/game_card.gd" id="1_e24nm"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e24nm"]
+
 [node name="GameCard" type="Control" unique_id=851437385]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 3
@@ -13,6 +15,7 @@ offset_bottom = -548.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e24nm")
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=996770619]
 layout_mode = 1
@@ -72,3 +75,16 @@ metadata/_edit_lock_ = true
 [node name="Team2RecordLabel" type="Label" parent="HBoxContainer/Team2Container" unique_id=361092292]
 layout_mode = 2
 text = "10-10"
+
+[node name="OpenGameButton" type="Button" parent="." unique_id=1396980764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e24nm")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="OpenGameButton" to="." method="_on_open_game_button_pressed"]

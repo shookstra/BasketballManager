@@ -20,14 +20,16 @@ func _ready():
 
 func start_possession():
 	shot_clock = 25
+	if possession_team == null:
+		possession_team = team_1 if 0 == randi_range(0,1) else team_2
+	if possession_player == null:
+		possession_player = possession_team.get_ball_handler()
+		emit_print_to_gui("### Player: " + possession_player.get_full_name())
 	emit_print_to_gui(str("Offensive Team: " + possession_team.name))
 	if time_remaining_in_seconds > 0:
 		possession_step()
 
 func possession_step():
-	if possession_player == null:
-		possession_player = possession_team.get_ball_handler()
-		emit_print_to_gui("### Player: " + possession_player.get_full_name())
 	var context = {
 		"shot_clock": shot_clock,
 		"defender_distance": randf_range(0.5, 4.0),
@@ -53,7 +55,8 @@ func possession_step():
 			emit_print_to_gui("%s passes the ball to %s." % [possession_player.get_full_name(), target.get_full_name()])
 			handle_pass(target)
 			advance_clock(2)
-			emit_print_to_gui("### Player: %s" % possession_player.get_full_name())
+			if possession_player:
+				emit_print_to_gui("### Player: %s" % possession_player.get_full_name())
 		"reset":
 			shot_clock -= 4
 			advance_clock(2.0)

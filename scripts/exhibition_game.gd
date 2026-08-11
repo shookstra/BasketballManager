@@ -4,45 +4,42 @@ extends Node
 # --- Game State ---
 # ------------------
 
-@onready var team_generator = $TeamGenerator
-@onready var player_list_1 = $RosterModeTeam1
-@onready var player_list_2 = $RosterModeTeam2
+@export var game: Game
 
 const player_card = preload("res://scenes/PlayerCard.tscn")
 
-var game: Game
-
-func _ready() -> void:
-	start_game()
+#func _ready() -> void:
+	#start_game()
 
 func start_game():
 	# used to get a different seed every time
 	randomize()
-	game = Game.new()
-	## TODO Replace with actual teams passed into this
-	game.team_1 = team_generator.generate_roster()
-	game.team_1.players = team_generator.generate_players(13)
-	game.team_2 = team_generator.generate_roster()
-	game.team_2.players = team_generator.generate_players(13)
 	set_team_rosters()
-	##
-	print("--------------------------------------")
-	print("--- Get ready for some basketball! ---")
-	print("--------------------------------------")
 	game.connect("print_to_gui", _handle_print_to_gui)
 	game.possession_team = game.team_1 if randi_range(0,1) == 0 else game.team_2
 
 func set_team_rosters():
 	for player: Player in game.team_1.players:
-		var new_card = player_card.instantiate()
-		new_card.player = player
-		new_card.get_node("HBoxContainer/NameLabel").text = player.first_name + " " + player.last_name
-		new_card.get_node("HBoxContainer/StrengthLabel").text = str(player.strength)
-		new_card.get_node("HBoxContainer/AgilityLabel").text = str(player.agility)
-		new_card.get_node("HBoxContainer/EnduranceLabel").text = str(player.endurance)
-		new_card.get_node("HBoxContainer/IntelligenceLabel").text = str(player.intelligence)
-		new_card.get_node("HBoxContainer/CharismaLabel").text = str(player.charisma)
-		player_list_1.add_child(new_card)
+		create_player_card(player, 1)
+	for player: Player in game.team_2.players:
+		create_player_card(player, 2)
+	#await game.start_possession()
+	_handle_print_to_gui("") # Add a blank line between plays for readability
+
+func create_player_card(player, team1_or_team2):
+	var new_card = player_card.instantiate()
+	new_card.player = player
+	new_card.get_node("HBoxContainer/NameLabel").text = player.first_name + " " + player.last_name
+	new_card.get_node("HBoxContainer/StrengthLabel").text = str(player.strength)
+	new_card.get_node("HBoxContainer/AgilityLabel").text = str(player.agility)
+	new_card.get_node("HBoxContainer/EnduranceLabel").text = str(player.endurance)
+	new_card.get_node("HBoxContainer/IntelligenceLabel").text = str(player.intelligence)
+	new_card.get_node("HBoxContainer/CharismaLabel").text = str(player.charisma)
+	new_card.name_label = player.first_name
+	if team1_or_team2 == 1:
+		$RosterModeTeam1/PlayerList/ScrollContainer/VBoxContainer.add_child(new_card)
+	elif team1_or_team2 == 2:
+		$RosterModeTeam2/PlayerList/ScrollContainer/VBoxContainer.add_child(new_card)
 
 func _handle_print_to_gui(text):
 	var new_label := Label.new()

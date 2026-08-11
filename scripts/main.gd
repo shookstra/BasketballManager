@@ -27,18 +27,14 @@ func _ready() -> void:
 	if (Data._save.league.teams.size() < Data._save.number_of_teams):
 		while (Data._save.league.teams.size() < Data._save.number_of_teams):
 			var new_team = team_generator.generate_roster()
+			for team in Data._save.league.teams:
+				while team.name == new_team.name:
+					new_team = team_generator.generate_roster()
 			Data._save.league.teams.append(new_team)
 	if (Data._save.league.schedule == null):
 		Data._save.league.schedule = team_generator.generate_schedule()
-	else:
-		for game: Game in Data._save.league.schedule.games:
-			var new_card: GameCard = game_card.instantiate()
-			new_card.team_1 = game.team_1
-			new_card.team_2 = game.team_2
-			schedule_mode.add_child(new_card)
-			if Data._save.player_team == game.team_1 || Data._save.player_team == game.team_2:
-				var duplicate_card = new_card.duplicate()
-				my_schedule_mode.add_child(duplicate_card)
+	populate_schedule_elements()
+		
 			#print(game.team_1.name + " VS. " + game.team_2.name)
 	$Dashboard/SidebarColorRect2/TeamNameLabel.text = Data._save.player_team.city + " " + Data._save.player_team.name
 	
@@ -50,6 +46,18 @@ func _ready() -> void:
 	
 	#var test = db.query_players()
 	#print(test)
+	
+func populate_schedule_elements():
+	for game: Game in Data._save.league.schedule.games:
+			var new_card: GameCard = game_card.instantiate()
+			new_card.connect("set_game", set_game)
+			new_card.team_1 = game.team_1
+			new_card.team_2 = game.team_2
+			schedule_mode.add_child(new_card)
+			if Data._save.player_team == game.team_1 || Data._save.player_team == game.team_2:
+				var duplicate_card = new_card.duplicate()
+				duplicate_card.connect("set_game", set_game)
+				my_schedule_mode.add_child(duplicate_card)
 
 func set_available_players_list():
 	var container = $DraftMode/AvailablePlayers/ScrollContainer/VBoxContainer
@@ -91,7 +99,8 @@ func _on_create_league_button_pressed() -> void:
 func set_active_mode(node: Node) -> void:
 	$DraftMode.visible = false
 	$NewLeagueMode.visible = false
-	$ScheduleMode.visible = false
+	$ScheduleContainer.visible = false
+	$GameMode.visible = false
 	node.visible = true
 
 # show available players
@@ -172,4 +181,13 @@ func _on_save_game_button_pressed() -> void:
 	Data._save_game()
 
 func _on_schedule_button_pressed() -> void:
-	set_active_mode($ScheduleMode)
+	set_active_mode($ScheduleContainer)
+
+func _on_game_button_pressed() -> void:
+	set_active_mode($GameMode)
+	
+func set_game(game: Game) -> void:
+	$GameMode/ExhibitionGame.game = game
+	$GameMode/ExhibitionGame.set_team_rosters()
+	$GameMode/ExhibitionGame.start_game()
+	set_active_mode($GameMode)

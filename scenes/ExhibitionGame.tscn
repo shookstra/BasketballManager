@@ -21,6 +21,7 @@ script = ExtResource("1_4w6ab")
 layout_mode = 1
 
 [node name="Background" type="Panel" parent="." unique_id=92282094]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
